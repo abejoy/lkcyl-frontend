@@ -1,13 +1,13 @@
 {
   "main": {
-    "name":"LKCYL",
-    "occupation":"Software Developer",
-    "description":"Welcome to London Knanaya Catholic Association. LKCYL is a group consisting of KCYL members from from all of London region knanaya units. The pourpose of LKCYL is to unite all Knanaya Catholics who are living in the London region, so that we can create a common platform for promoting family unity, educational activities, and become an institution to meet the social and welfare needs irrespective of place, race and community",
+    "name": "London KCYL",
+    "occupation": "Software Developer",
+    "description": "Welcome to London Knanaya Catholic Association. LKCYL is a group consisting of KCYL members from from all of London region knanaya units. The pourpose of LKCYL is to unite all Knanaya Catholics who are living in the London region, so that we can create a common platform for promoting family unity, educational activities, and become an institution to meet the social and welfare needs irrespective of place, race and community",
     "extra": "have limited spaces and will be accepting people on a first come first service basis so please register for the camp providing your details below.",
-    "soldout" : "We are currently fully booked and have stoped registration, if there are any cancelations we will reopen the registration please keep an eye on this page.",
-    "image":"profilepic.jpg",
-    "bio":"I am just a really techy person who enjoys building stuff",
-    "contactmessage":"Please fill in the form to register for the Football Tournament",
+    "soldout": "We are currently fully booked and have stoped registration, if there are any cancelations we will reopen the registration please keep an eye on this page.",
+    "image": "profilepic.jpg",
+    "bio": "I am just a really techy person who enjoys building stuff",
+    "contactmessage": "Please fill in the form to register for the Football Tournament",
     "email": "abrahamjoys98@gmail.com",
     "contacts": [
       {
@@ -32,99 +32,99 @@
       }
     ],
     "website": "http://www.abrahamjoys.com",
-    "resumedownload":"./CV.pdf",
-    "social":[
+    "resumedownload": "./CV.pdf",
+    "social": [
       {
-        "name":"facebook",
-        "url":"https://www.facebook.com/groups/ukkcyl",
-        "className":"fa fa-facebook"
+        "name": "facebook",
+        "url": "https://www.facebook.com/groups/ukkcyl",
+        "className": "fa fa-facebook"
       },
       {
-        "name":"instagram",
-        "url":"https://www.instagram.com/london_kcyl/",
-        "className":"fa fa-instagram"
+        "name": "instagram",
+        "url": "https://www.instagram.com/london_kcyl/",
+        "className": "fa fa-instagram"
       }
     ]
   },
-  "resume":{
-    "skillmessage":"These are my Skills",
-    "education":[
+  "resume": {
+    "skillmessage": "These are my Skills",
+    "education": [
       {
-        "school":"University of Leicester",
-        "degree":"BSc Computer Science with Year in Industry",
-        "graduated":"September 2020",
-        "description":"Was Course Representative: Responsible for collecting and portraying feedback to university lectures, to help improve education process"
+        "school": "University of Leicester",
+        "degree": "BSc Computer Science with Year in Industry",
+        "graduated": "September 2020",
+        "description": "Was Course Representative: Responsible for collecting and portraying feedback to university lectures, to help improve education process"
       },
       {
-        "school":"Herschel Grammar School, Slough",
-        "degree":"A level: Mathematics, Further Mathematics, Computing",
-        "graduated":"July 2016"
+        "school": "Herschel Grammar School, Slough",
+        "degree": "A level: Mathematics, Further Mathematics, Computing",
+        "graduated": "July 2016"
       }
     ],
-    "work":[
+    "work": [
       {
-        "company":"Sky",
-        "title":"Assioate Software Developer",
-        "years":"September 2020 - Present",
-        "description":"Working as a front end developer on SkyQ Tv apps"
+        "company": "Sky",
+        "title": "Assioate Software Developer",
+        "years": "September 2020 - Present",
+        "description": "Working as a front end developer on SkyQ Tv apps"
       },
       {
-        "company":"Contemi Solutions AS",
-        "title":"Placement Developer",
-        "years":"August 2018 - August 2019",
-        "description":"Worked as a full stack developer on various Angular applications"
+        "company": "Contemi Solutions AS",
+        "title": "Placement Developer",
+        "years": "August 2018 - August 2019",
+        "description": "Worked as a full stack developer on various Angular applications"
       }
     ],
-    "skills":[
+    "skills": [
       {
-        "name":"Java",
-        "level":"90%"
+        "name": "Java",
+        "level": "90%"
       },
       {
-        "name":"Python",
-        "level":"90%"
+        "name": "Python",
+        "level": "90%"
       },
       {
-        "name":"React",
-        "level":"80%"
+        "name": "React",
+        "level": "80%"
       },
       {
-        "name":"JavaScript, TypeScript, Angular",
-        "level":"80%"
+        "name": "JavaScript, TypeScript, Angular",
+        "level": "80%"
       },
       {
-        "name":"HTML5, CSS",
-        "level":"80%"
+        "name": "HTML5, CSS",
+        "level": "80%"
       },
       {
-        "name":"Spring",
-        "level":"60%"
+        "name": "Spring",
+        "level": "60%"
       },
       {
-        "name":"MySql, Docker, AWS EC2",
-        "level":"70%"
+        "name": "MySql, Docker, AWS EC2",
+        "level": "70%"
       }
     ]
   },
-  "testimonials":{
-    "testimonials":[
+  "testimonials": {
+    "testimonials": [
       {
-        "text":"Football Tournament",
-        "user":"Saturday 13th July"
+        "text": "Football Tournament",
+        "user": "Saturday 13th July"
       },
       {
-        "text":"LKCYL Paintballing",
-        "user":"Coming Soon"
+        "text": "LKCYL Paintballing",
+        "user": "Coming Soon"
       },
       {
-        "text":"3 Day South Camp",
-        "user":"Coming Soon"
+        "text": "3 Day South Camp",
+        "user": "Coming Soon"
       }
     ]
   },
   "ukkcaunits": [
-    "Basildon and southend Unit",	
-    "Glasgow Unit", 
+    "Basildon and southend Unit",
+    "Glasgow Unit",
     "Nottingham Unit",
     "Basingstoke Unit",
     "Gloucestershire Unit",
@@ -153,26 +153,26 @@
     "Coventry and Warwickshire Unit",
     "Leicestershire Unit",
     "Swansea Unit",
-    "Croydon Unit",	
+    "Croydon Unit",
     "Liverpool Unit",
     "Swindon Unit",
     "Derbyshire Unit",
-    "Manchester Unit",	
+    "Manchester Unit",
     "Tunbridgewells & Maidstone Unit",
     "Devon Unit",
-    "Medway Unit",	
+    "Medway Unit",
     "Wigan Unit",
     "East Anglia Unit",
-    "Middlesborough Unit", 	
+    "Middlesborough Unit",
     "Worcestershire Unit",
     "East London Unit",
     "Newcastle Unit",
-    "Yorkshire Unit", 
+    "Yorkshire Unit",
     "East Sussex Unit",
     "Northern Ireland Unit",
     "Peterborough Unit",
     "Edinburgh Unit",
     "North West London Unit",
     "Ipswich Unit"
-    ]
+  ]
 }
