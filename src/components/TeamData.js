@@ -15,7 +15,7 @@ const TeamData = (props) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   const override = {
     display: "block",
