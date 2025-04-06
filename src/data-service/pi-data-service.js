@@ -2,10 +2,6 @@
 import { gql } from "@apollo/client";
 import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 
-console.log("Environment Variables:", process.env);
-const url = process.env.REACT_APP_GRAPH_URI_ENDPOINT;
-console.log("GRAPH_URI_ENDPOINT:", url);
-
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
