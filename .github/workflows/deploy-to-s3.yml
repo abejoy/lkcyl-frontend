@@ -41,9 +41,9 @@ jobs:
 
     - name: Sync build folder to S3
       run: |
-        aws s3 sync ./build s3://abefrontendstacklkcylwebsitebucket --delete
+        aws s3 sync ./build s3://prodlkcylfrontendstacklkcylwebsitebucket --delete
 
     # Step 6: Upload emailData folder to S3
     - name: Sync emailData folder to S3
       run: |
-        aws s3 sync ./emailData s3://abelkcylstackemailbucket --delete
+        aws s3 sync ./emailData s3://prodlkcyllkcylstackemailbucket --delete

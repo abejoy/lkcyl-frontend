@@ -18,7 +18,7 @@ if [[ -z "$AWS_ACCESS_KEY_ID" || -z "$AWS_SECRET_ACCESS_KEY" ]]; then
 fi
 
 # Define variables
-BUCKET_NAME="abefrontendstacklkcylwebsitebucket"
+BUCKET_NAME="prodlkcylfrontendstacklkcylwebsitebucket"
 FRONTEND_FOLDER="./"
 BUILD_FOLDER="$FRONTEND_FOLDER/build"
 
