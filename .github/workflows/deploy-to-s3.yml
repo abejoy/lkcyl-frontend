@@ -27,6 +27,9 @@ jobs:
     # Step 4: Build the frontend
     - name: Build the frontend
       run: npm run build
+      env:
+        REACT_APP_GRAPH_URI_ENDPOINT: ${{ secrets.REACT_APP_GRAPH_URI_ENDPOINT }}
+        REACT_APP_X_API_KEY: ${{ secrets.REACT_APP_X_API_KEY }}
 
     # Step 5: Upload to S3
     - name: Deploy to S3
