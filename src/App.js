@@ -9,7 +9,6 @@ import { ReactNotifications } from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import ImageCarousel from './components/ImageCarousel';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import RegisterPage from "./pages/RegisterPage";
 
 const App = () => {
   return (
