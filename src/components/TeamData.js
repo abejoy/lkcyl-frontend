@@ -6,6 +6,7 @@ import {
   updatePlayers,
 } from "../data-service/pi-data-service";
 import { styles } from "./MyTable";
+import "./TeamData.css"; // Make sure this path is correct
 
 const TeamData = (props) => {
   const [rowDataFromBe, setRowDataFromBe] = useState({});
@@ -15,7 +16,7 @@ const TeamData = (props) => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const override = {
     display: "block",
@@ -145,15 +146,22 @@ const TeamData = (props) => {
       <div style={styles.sectionDivs}>
         <div>Players</div>
         {players.map((player, index) => (
-          <label key={index}>
+          <div
+            key={index}
+            id={player.id}
+            onClick={verifyPlayer}
+            class="checkbox-wrapper-47"
+          >
             <input
-              id={player.id}
               type="checkbox"
+              name="cb"
+              id="cb-47"
               checked={player.verified}
-              onChange={verifyPlayer}
             />
-            {player.name}
-          </label>
+            <label id={player.id} for="cb-47">
+              {"  " + player.name}
+            </label>
+          </div>
         ))}
       </div>
 
