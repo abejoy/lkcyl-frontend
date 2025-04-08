@@ -34,7 +34,7 @@ header {
    height: 800px;
    min-height: 500px;
    width: 100%;
-   background: #161415 url(../images/testimonials-bg.jpeg) no-repeat top center;
+   background: #161415 /*url(../images/testimonials-bg.jpeg) no-repeat top center */;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
@@ -91,7 +91,30 @@ header .banner {
    
 }
 
-header .banner-text { width: 100%; background: #52525275; border-radius: 4rem;}
+.modern-hero-heading {
+   font-size: 6rem;
+   font-weight: 800;
+   color: #ffffff;
+   text-align: center;
+   opacity: 0;
+   transform: translateY(40px);
+   animation: fadeSlideInSoft 1.2s ease-out forwards;
+   letter-spacing: -1px;
+ }
+ 
+ @keyframes fadeSlideInSoft {
+   from {
+     opacity: 0;
+     transform: translateY(40px);
+   }
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+ 
+
+header .banner-text { width: 100%;}
 header .banner-text h1 {
    font: 90px/1.1em 'opensans-bold', sans-serif;
    color: #fff;
@@ -100,12 +123,14 @@ header .banner-text h1 {
    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
 }
 header .banner-text h3 {
-   font: 28px/1.9em 'librebaskerville-regular', serif;
-   color: #ffffff;
-   margin: 0 auto;
-   width: 70%;
-   text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
-}
+   text-align: center !important;
+   max-width: 900px !important;
+   margin: 0 auto !important;
+   color: #fff;
+ }
+ 
+ 
+
 header .banner-text h3 span,
 header .banner-text h3 a {
    color: #fff;
@@ -174,6 +199,8 @@ header .scrolldown a:hover { color: #11ABB0; }
    position: fixed;
    left: 0;
    top: 0;
+   display: flex;
+   justify-content: center;
 }
 .opaque { background-color: #333; }
 
@@ -683,7 +710,7 @@ call-to-action .button {
 /* ------------------------------------------------------------------ */
 
 #testimonials {
-   background: #1F1F1F url(../images/header-background.jpg) no-repeat center center;
+   background: #1F1F1F /*url(../images/header-background.jpg) no-repeat center center */;
    background-size: contain !important;
    -webkit-background-size: contain !important;
    background-attachment: fixed;
@@ -801,7 +828,7 @@ call-to-action .button {
     margin: 0 6px;
     display: inline-block;
     zoom: 1;
-    *display: inline;
+    display: inline;
 }
 .flex-control-paging li a {
     width: 12px;

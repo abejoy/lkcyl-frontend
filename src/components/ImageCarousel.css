@@ -1,0 +1,31 @@
+/* Position arrows outside */
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  width: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.custom-carousel .carousel-control-prev {
+  left: -90px;
+}
+
+.custom-carousel .carousel-control-next {
+  right: -90px;
+}
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  background-color: #000000;
+  background-size: 60% 60%;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 5px #000);
+}
+
+.rounded-carousel-img {
+    border-radius: 20px;
+  }
+  

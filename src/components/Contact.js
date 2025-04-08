@@ -9,6 +9,7 @@ import Modal from "react-modal";
 import MyTable from "./MyTable.js";
 import { Store } from "react-notifications-component";
 import resumeData from "../assets/resumeData.json";
+import BarNav from './BarNav';
 
 const Contact = (props) => {
   const heading = ["Team Name", "Unit", "Colour", "Verified"];
@@ -200,6 +201,8 @@ const Contact = (props) => {
   };
 
   return (
+    <>
+    <BarNav/>
     <section id="contact">
       <div className="row section-head">
         <div className="two columns header-col">
@@ -460,6 +463,7 @@ const Contact = (props) => {
         <MyTable data={tabledata} refreshData={openModal} />
       </Modal>
     </section>
+    </>
   );
 };
 
