@@ -12,9 +12,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-
-
-
     <Router>
       <Routes>
         <Route
@@ -37,8 +34,6 @@ const App = () => {
             <Footer data={resumeData.main} />
           </div>
           } />
-
-          
       </Routes>
     </Router>
   );

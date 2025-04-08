@@ -184,6 +184,10 @@ em { font: 15px/30px 'opensans-italic', sans-serif; }
 strong, b { font: 15px/30px 'opensans-bold', sans-serif; }
 small { font-size: 11px; line-height: inherit; }
 
+
+html, body {
+   overflow-x: hidden;
+ }
 /*	Blockquotes */
 blockquote {
    margin: 30px 0px;
