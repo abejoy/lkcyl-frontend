@@ -24,6 +24,16 @@
   color: white;
 }
 
+.banner-text {
+  padding-top: 250px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+
 .App-link {
   color: #61dafb;
 }

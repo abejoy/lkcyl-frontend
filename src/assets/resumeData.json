@@ -109,16 +109,28 @@
   "testimonials": {
     "testimonials": [
       {
-        "text": "Football Tournament",
-        "user": "Saturday 13th July"
+        "name": "Youth Gathering & BBQ",
+        "text": "Join us for food, games, and fellowship at Hyde Park.",
+        "date": "Saturday 13th July, 2:00 PM",
+        "location": "Hyde Park, London"
       },
       {
-        "text": "LKCYL Paintballing",
-        "user": "Coming Soon"
+        "name": "Football Tournament",
+        "text": "Join us for a fun day of football and friendly competition.",
+        "date": "Saturday 13th July, 10:00 AM",
+        "location": "Local Football Field, London"
       },
       {
-        "text": "3 Day South Camp",
-        "user": "Coming Soon"
+        "name": "LKCYL Paintballing",
+        "text": "Get ready for an action-packed day of paintballing!",
+        "date": "Coming Soon",
+        "location": ""
+      },
+      {
+        "name": "3 Day South Camp",
+        "text": "Join us for a 3-day camp filled with fun and activities.",
+        "date": "Coming Soon",
+        "location": ""
       }
     ]
   },
