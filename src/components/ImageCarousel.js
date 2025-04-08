@@ -21,6 +21,7 @@ const ImageCarousel = () => {
         };
 
         const data = await s3.listObjectsV2(params).promise();
+
         const imageKeys = data.Contents.map((item) => item.Key).filter((key) =>
           key.match(/\.(jpg|jpeg|png|gif)$/i)
         );
@@ -39,7 +40,6 @@ const ImageCarousel = () => {
       }
     };
     fetchImages();
-    console.log("Images fetched", images);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -70,59 +70,32 @@ const ImageCarousel = () => {
           overflow: "visible",
         }}
       >
-        <Carousel.Item>
-          <img
-            className="d-block w-100 rounded-carousel-img"
-            src="/images/header-background.jpg"
-            alt="First slide"
-            style={{ height: "400px", objectFit: "cover" }}
-          />
-          <Carousel.Caption
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              borderRadius: "10px",
-            }}
-          >
-            <h3>Slide 1</h3>
-            <p>Description for the first slide</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100 rounded-carousel-img"
-            src="/images/poster.jpeg"
-            alt="Second slide"
-            style={{ height: "400px", objectFit: "cover" }}
-          />
-          <Carousel.Caption
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              borderRadius: "10px",
-            }}
-          >
-            <h3>Slide 2</h3>
-            <p>Description for the second slide</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100 rounded-carousel-img"
-            src="/images/poster.jpeg"
-            alt="Third slide"
-            style={{ height: "400px", objectFit: "cover" }}
-          />
-          <Carousel.Caption
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              borderRadius: "10px",
-            }}
-          >
-            <h3>Slide 3</h3>
-            <p>Description for the third slide</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        {/* images comes from the s3 bucket add images to emailData/photos/ folder*/}
+        {images.length > 0 ? (
+          images.map((image, index) => (
+            <Carousel.Item key={index}>
+              <img
+                className="d-block w-100 rounded-carousel-img"
+                src={image}
+                alt={`Slide ${index + 1}`}
+                style={{ height: "400px", objectFit: "cover" }}
+              />
+              <Carousel.Caption
+                style={{
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  borderRadius: "10px",
+                }}
+              >
+                <h3>Slide {index + 1}</h3>
+                {/* <p>Description for slide {index + 1}</p> */}
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))
+        ) : (
+          <p style={{ color: "#FFF", textAlign: "center" }}>
+            Loading images...
+          </p>
+        )}
       </Carousel>
     </div>
   );
