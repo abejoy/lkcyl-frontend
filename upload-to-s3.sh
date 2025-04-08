@@ -12,7 +12,7 @@ else
 fi
 
 # Check if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are set
-if [[ -z "$AWS_ACCESS_KEY_ID" || -z "$AWS_SECRET_ACCESS_KEY" ]]; then
+if [[ -z "$REACT_APP_AWS_ACCESS_KEY_ID" || -z "$REACT_APP_AWS_SECRET_ACCESS_KEY" ]]; then
   echo "Error: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY must be set in the .env file."
   exit 1
 fi
