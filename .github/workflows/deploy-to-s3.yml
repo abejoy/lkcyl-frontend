@@ -10,40 +10,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout the repository
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    # Step 2: Set up Node.js
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16 # Use the Node.js version compatible with your project
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # Use the Node.js version compatible with your project
 
-    # Step 3: Install dependencies
-    - name: Install dependencies
-      run: npm install
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-    # Step 4: Build the frontend
-    - name: Build the frontend
-      run: npm run build
-      env:
-        REACT_APP_GRAPH_URI_ENDPOINT: ${{ secrets.REACT_APP_GRAPH_URI_ENDPOINT }}
-        REACT_APP_X_API_KEY: ${{ secrets.REACT_APP_X_API_KEY }}
+      # Step 4: Build the frontend
+      - name: Build the frontend
+        run: npm run build
+        env:
+          REACT_APP_GRAPH_URI_ENDPOINT: ${{ secrets.REACT_APP_GRAPH_URI_ENDPOINT }}
+          REACT_APP_X_API_KEY: ${{ secrets.REACT_APP_X_API_KEY }}
 
-    # Step 5: Upload to S3
-    - name: Deploy to S3
-      uses: aws-actions/configure-aws-credentials@v3
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: eu-west-2 # Replace with your AWS region
+      # Step 5: Upload to S3
+      - name: Deploy to S3
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.REACT_APP_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.REACT_APP_AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-2 # Replace with your AWS region
 
-    - name: Sync build folder to S3
-      run: |
-        aws s3 sync ./build s3://prodlkcylfrontendstacklkcylwebsitebucket --delete
+      - name: Sync build folder to S3
+        run: |
+          aws s3 sync ./build s3://prodlkcylfrontendstacklkcylwebsitebucket --delete
 
-    # Step 6: Upload emailData folder to S3
-    - name: Sync emailData folder to S3
-      run: |
-        aws s3 sync ./emailData s3://prodlkcyllkcylstackemailbucket --delete
+      # Step 6: Upload emailData folder to S3
+      - name: Sync emailData folder to S3
+        run: |
+          aws s3 sync ./emailData s3://prodlkcyllkcylstackemailbucket --delete
