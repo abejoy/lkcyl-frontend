@@ -1,44 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
-import AWS from "aws-sdk";
+
 import "./ImageCarousel.css"; // Make sure this path is correct
+const importAll = (r) => r.keys().map(r);
 
 const ImageCarousel = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
-    // Configure AWS SDKs
-    const s3 = new AWS.S3({
-      accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID, // Add these to your .env file
-      secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-      region: "eu-west-2", // Your S3 bucket region
-    });
-    const fetchImages = async () => {
-      try {
-        const params = {
-          Bucket: "prodlkcyllkcylstackemailbucket", // Your S3 bucket name
-          Prefix: "photos/", // Folder path in the bucket
-        };
-
-        const data = await s3.listObjectsV2(params).promise();
-
-        const imageKeys = data.Contents.map((item) => item.Key).filter((key) =>
-          key.match(/\.(jpg|jpeg|png|gif)$/i)
-        );
-
-        const imageUrls = imageKeys.map((key) =>
-          s3.getSignedUrl("getObject", {
-            Bucket: params.Bucket,
-            Key: key,
-            Expires: 3600, // URL expiration time in seconds
-          })
-        );
-
-        setImages(imageUrls);
-      } catch (error) {
-        console.error("Error fetching images from S3:", error);
-      }
-    };
-    fetchImages();
+    setImages(importAll(require.context("../assets/images", false, /\.(jpg|jpeg|png|gif)$/i)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
