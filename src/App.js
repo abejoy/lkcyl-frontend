@@ -9,6 +9,7 @@ import { ReactNotifications } from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import ImageCarousel from './components/ImageCarousel';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Gallery from "./components/Gallery";
 
 const App = () => {
   return (
@@ -27,7 +28,14 @@ const App = () => {
           </div>
           }
         />
-        <Route path="/contact" element={
+        <Route path="/gallery" element={
+          <div className="App">
+            <ReactNotifications />
+            <Gallery />
+            <Footer data={resumeData.main} />
+          </div>
+          } />
+        <Route path="/football" element={
           <div className="App">
             <ReactNotifications />
             <Contact data={resumeData.main} />

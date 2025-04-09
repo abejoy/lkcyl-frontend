@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 
 import "./ImageCarousel.css"; // Make sure this path is correct
-const importAll = (r) => r.keys().map(r);
+export const importAll = (r) => r.keys().map(r);
 
 const ImageCarousel = () => {
   const [images, setImages] = useState([]);
