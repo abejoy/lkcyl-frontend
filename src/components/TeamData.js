@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Store } from "react-notifications-component";
 import HashLoader from "react-spinners/HashLoader";
 import {
@@ -14,18 +14,7 @@ const TeamData = (props) => {
   const [loading, setLoading] = useState(false);
   const row = props.row;
 
-  useEffect(() => {
-    fetchData();
-  }, [row]);
-
-  const override = {
-    display: "block",
-    margin: "0 auto",
-    borderColor: "red",
-    background: "#685dc3",
-  };
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     const data = await getTeamByTeamName(row[0]);
     setRowDataFromBe(data);
     const newPlayers = data.players.map((p, index) => ({
@@ -34,7 +23,27 @@ const TeamData = (props) => {
       verified: p.verified,
     }));
     setPlayers(newPlayers);
+  }, [row]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red",
+    background: "#685dc3",
   };
+  //   const data = await getTeamByTeamName(row[0]);
+  //   setRowDataFromBe(data);
+  //   const newPlayers = data.players.map((p, index) => ({
+  //     id: index,
+  //     name: p.name,
+  //     verified: p.verified,
+  //   }));
+  //   setPlayers(newPlayers);
+  // };
 
   const showToast = (title, message, type) => {
     Store.addNotification({
