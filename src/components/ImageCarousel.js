@@ -7,7 +7,6 @@ const ImageCarousel = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
     // Configure AWS SDKs
-    console.log("AWS SDK configured", process.env);
     const s3 = new AWS.S3({
       accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID, // Add these to your .env file
       secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
