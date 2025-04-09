@@ -9,7 +9,7 @@ import Modal from "react-modal";
 import MyTable from "./MyTable.js";
 import { Store } from "react-notifications-component";
 import resumeData from "../assets/resumeData.json";
-import BarNav from './BarNav';
+import BarNav from "./BarNav";
 
 const Contact = (props) => {
   const heading = ["Team Name", "Unit", "Colour", "Verified"];
@@ -180,9 +180,9 @@ const Contact = (props) => {
 
   const getContacts = () => {
     const items = [];
-    contacts.forEach((contact) => {
+    contacts.forEach((contact, i) => {
       items.push(
-        <div>
+        <div key={i}>
           <p className="address">
             {contact.role}: {contact.name} <br />
             <span>
@@ -202,267 +202,267 @@ const Contact = (props) => {
 
   return (
     <>
-    <BarNav/>
-    <section id="contact">
-      <div className="row section-head">
-        <div className="two columns header-col">
-          <h1>
-            <span>Football Tournament Registration.</span>
-          </h1>
+      <BarNav />
+      <section id="contact">
+        <div className="row section-head">
+          <div className="two columns header-col">
+            <h1>
+              <span>Football Tournament Registration.</span>
+            </h1>
+          </div>
+
+          <div className="ten columns">
+            <p className="lead">{message}</p>
+          </div>
         </div>
 
-        <div className="ten columns">
-          <p className="lead">{message}</p>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="fakecenter eight columns">
-          <form onSubmit={buttonClicked} id="contactForm" name="contactForm">
-            <fieldset>
-              <div>
-                <input
-                  required
-                  type="text"
-                  placeholder="Team Name"
-                  defaultValue=""
-                  size="35"
-                  id="teamName"
-                  name="teamName"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div>
-                <select
-                  required
-                  id="unit"
-                  defaultValue=""
-                  name="unit"
-                  onChange={handleChange}
-                  onFocus={conbinedUnitsSelected}
-                >
-                  <option disabled value="">
-                    Please Select your Unit
-                  </option>
-                  <option value="combined">Combining Unit</option>
-                  {getUnits().map((unit, index) => (
-                    <option key={index} value={unit}>
-                      {unit}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <select
-                  required
-                  id="tournamentGender"
-                  defaultValue=""
-                  name="tournamentGender"
-                  onChange={handleChange}
-                >
-                  <option disabled value="">
-                    Please Select Tournament
-                  </option>
-                  <option value="Female">Female Tournament</option>
-                  <option value="Male">Male Tournament</option>
-                </select>
-              </div>
-
-              <div>
-                <input
-                  required
-                  type="text"
-                  placeholder="Captain Full Name"
-                  defaultValue=""
-                  size="35"
-                  id="captainName"
-                  name="captainName"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div>
-                <input
-                  required
-                  type="text"
-                  placeholder="captains Email"
-                  defaultValue=""
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                  size="35"
-                  id="captainEmail"
-                  name="captainEmail"
-                  onChange={handleChange}
-                  onFocus={showEmailRequirments}
-                />
-              </div>
-
-              <div className="textfeildfront">
-                <input
-                  required
-                  type="tel"
-                  placeholder="captains Phone"
-                  pattern="[0-9]{11}"
-                  size="35"
-                  id="captainPhone"
-                  name="captainPhone"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div>
-                <input
-                  required
-                  type="text"
-                  placeholder="Manager/Director Full Name"
-                  defaultValue=""
-                  size="35"
-                  id="managerName"
-                  name="managerName"
-                  onChange={handleChange}
-                  onFocus={showManagerBubble}
-                />
-              </div>
-
-              <div>
-                <input
-                  required
-                  type="text"
-                  placeholder="Manager/Director Email"
-                  defaultValue=""
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                  size="35"
-                  id="managerEmail"
-                  name="managerEmail"
-                  onChange={handleChange}
-                  onFocus={showEmailRequirments}
-                />
-              </div>
-
-              <div className="textfeildfront">
-                <input
-                  required
-                  type="tel"
-                  placeholder="Manager/Director Phone Number"
-                  pattern="[0-9]{11}"
-                  size="35"
-                  id="managerPhone"
-                  name="managerPhone"
-                  onChange={handleChange}
-                />
-              </div>
-
-              {/* TODO color selection here */}
-
-              <div>
-                <select
-                  required
-                  id="selectedColor"
-                  defaultValue=""
-                  name="selectedColor"
-                  onChange={handleChange}
-                  onFocus={handleColorFocus}
-                >
-                  <option disabled value="">
-                    {" "}
-                    Please Select Team Colour{" "}
-                  </option>
-                  {availableColors.map((color, index) => (
-                    <option
-                      disabled={!color.available}
-                      key={index}
-                      value={color.colorName}
-                    >
-                      {" "}
-                      {color.colorName}{" "}
-                      {!color.available ? "(Unavailable)" : ""}{" "}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="textfeildfront">
-                <textarea
-                  cols="50"
-                  rows="15"
-                  id="contactMessage"
-                  placeholder="Additional Message or Comments"
-                  name="contactMessage"
-                  onChange={handleChange}
-                ></textarea>
-              </div>
-
-              <div className="textfeildfront">
-                <span>
-                  Excluding the captain please enter your team players names
-                </span>
-              </div>
-
-              {getEmptyPlayers().map((player, index) => (
-                <div key={index}>
+        <div className="row">
+          <div className="fakecenter eight columns">
+            <form onSubmit={buttonClicked} id="contactForm" name="contactForm">
+              <fieldset>
+                <div>
                   <input
-                    required={player.required}
+                    required
                     type="text"
-                    placeholder={player.placeholder}
+                    placeholder="Team Name"
                     defaultValue=""
                     size="35"
-                    id={player.id}
-                    name={player.id}
-                    onChange={handleChangeInPlayers}
+                    id="teamName"
+                    name="teamName"
+                    onChange={handleChange}
                   />
                 </div>
-              ))}
 
-              <div className="submitButton">
-                <button className="submit">
-                  Submit{" "}
-                  <HashLoader
-                    cssOverride={override}
-                    loading={loading}
-                    color="#ffffff"
+                <div>
+                  <select
+                    required
+                    id="unit"
+                    defaultValue=""
+                    name="unit"
+                    onChange={handleChange}
+                    onFocus={conbinedUnitsSelected}
+                  >
+                    <option disabled value="">
+                      Please Select your Unit
+                    </option>
+                    <option value="combined">Combining Unit</option>
+                    {getUnits().map((unit, index) => (
+                      <option key={index} value={unit}>
+                        {unit}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <select
+                    required
+                    id="tournamentGender"
+                    defaultValue=""
+                    name="tournamentGender"
+                    onChange={handleChange}
+                  >
+                    <option disabled value="">
+                      Please Select Tournament
+                    </option>
+                    <option value="Female">Female Tournament</option>
+                    <option value="Male">Male Tournament</option>
+                  </select>
+                </div>
+
+                <div>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Captain Full Name"
+                    defaultValue=""
+                    size="35"
+                    id="captainName"
+                    name="captainName"
+                    onChange={handleChange}
                   />
-                </button>
+                </div>
+
+                <div>
+                  <input
+                    required
+                    type="text"
+                    placeholder="captains Email"
+                    defaultValue=""
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    size="35"
+                    id="captainEmail"
+                    name="captainEmail"
+                    onChange={handleChange}
+                    onFocus={showEmailRequirments}
+                  />
+                </div>
+
+                <div className="textfeildfront">
+                  <input
+                    required
+                    type="tel"
+                    placeholder="captains Phone"
+                    pattern="[0-9]{11}"
+                    size="35"
+                    id="captainPhone"
+                    name="captainPhone"
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Manager/Director Full Name"
+                    defaultValue=""
+                    size="35"
+                    id="managerName"
+                    name="managerName"
+                    onChange={handleChange}
+                    onFocus={showManagerBubble}
+                  />
+                </div>
+
+                <div>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Manager/Director Email"
+                    defaultValue=""
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    size="35"
+                    id="managerEmail"
+                    name="managerEmail"
+                    onChange={handleChange}
+                    onFocus={showEmailRequirments}
+                  />
+                </div>
+
+                <div className="textfeildfront">
+                  <input
+                    required
+                    type="tel"
+                    placeholder="Manager/Director Phone Number"
+                    pattern="[0-9]{11}"
+                    size="35"
+                    id="managerPhone"
+                    name="managerPhone"
+                    onChange={handleChange}
+                  />
+                </div>
+
+                {/* TODO color selection here */}
+
+                <div>
+                  <select
+                    required
+                    id="selectedColor"
+                    defaultValue=""
+                    name="selectedColor"
+                    onChange={handleChange}
+                    onFocus={handleColorFocus}
+                  >
+                    <option disabled value="">
+                      {" "}
+                      Please Select Team Colour{" "}
+                    </option>
+                    {availableColors.map((color, index) => (
+                      <option
+                        disabled={!color.available}
+                        key={index}
+                        value={color.colorName}
+                      >
+                        {" "}
+                        {color.colorName}{" "}
+                        {!color.available ? "(Unavailable)" : ""}{" "}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="textfeildfront">
+                  <textarea
+                    cols="50"
+                    rows="15"
+                    id="contactMessage"
+                    placeholder="Additional Message or Comments"
+                    name="contactMessage"
+                    onChange={handleChange}
+                  ></textarea>
+                </div>
+
+                <div className="textfeildfront">
+                  <span>
+                    Excluding the captain please enter your team players names
+                  </span>
+                </div>
+
+                {getEmptyPlayers().map((player, index) => (
+                  <div key={index}>
+                    <input
+                      required={player.required}
+                      type="text"
+                      placeholder={player.placeholder}
+                      defaultValue=""
+                      size="35"
+                      id={player.id}
+                      name={player.id}
+                      onChange={handleChangeInPlayers}
+                    />
+                  </div>
+                ))}
+
+                <div className="submitButton">
+                  <button className="submit">
+                    Submit{" "}
+                    <HashLoader
+                      cssOverride={override}
+                      loading={loading}
+                      color="#ffffff"
+                    />
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+
+            {errorMessage !== "" && (
+              <div id="message-warning" style={{ marginLeft: "0rem" }}>
+                {" "}
+                {errorMessage}
               </div>
-            </fieldset>
-          </form>
+            )}
 
-          {errorMessage !== "" && (
-            <div id="message-warning" style={{ marginLeft: "0rem" }}>
-              {" "}
-              {errorMessage}
-            </div>
-          )}
+            {successMessage !== "" && (
+              <div id="message-success" style={{ marginLeft: "0rem" }}>
+                <i className="fa fa-check"></i>
+                {successMessage}
+                <br />
+              </div>
+            )}
 
-          {successMessage !== "" && (
-            <div id="message-success" style={{ marginLeft: "0rem" }}>
-              <i className="fa fa-check"></i>
-              {successMessage}
-              <br />
-            </div>
-          )}
+            <aside className="four columns footer-widgets">
+              <div className="widget widget_contact">
+                <h4>Contact Details</h4>
 
-          <aside className="four columns footer-widgets">
-            <div className="widget widget_contact">
-              <h4>Contact Details</h4>
-
-              {getContacts()}
-            </div>
-          </aside>
+                {getContacts()}
+              </div>
+            </aside>
+          </div>
         </div>
-      </div>
-      <Modal
-        isOpen={modalStatus}
-        //   onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        //   style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <button onClick={closeModal}>close</button>
-        <div>Welcome to top secret page dont share this with anyone</div>
-        <MyTable data={tabledata} refreshData={openModal} />
-      </Modal>
-    </section>
+        <Modal
+          isOpen={modalStatus}
+          //   onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          //   style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <button onClick={closeModal}>close</button>
+          <div>Welcome to top secret page dont share this with anyone</div>
+          <MyTable data={tabledata} refreshData={openModal} />
+        </Modal>
+      </section>
     </>
   );
 };

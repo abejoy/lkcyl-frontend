@@ -16,7 +16,7 @@ const TeamData = (props) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [row]);
 
   const override = {
     display: "block",
@@ -33,7 +33,6 @@ const TeamData = (props) => {
       name: p.name,
       verified: p.verified,
     }));
-    console.log("newPlayers", newPlayers);
     setPlayers(newPlayers);
   };
 
@@ -64,6 +63,10 @@ const TeamData = (props) => {
   const verifyPlayer = (e) => {
     const index = parseInt(e.target.id); // Convert the id to the appropriate type
     const playerIndex = players.findIndex((p) => p.id === index);
+    if (playerIndex === -1) {
+      return; // Exit the function if no matching player is found
+    }
+
     const player = players[playerIndex];
     player.verified = !player.verified;
 
@@ -74,7 +77,6 @@ const TeamData = (props) => {
 
   const submitVerification = async () => {
     setLoading(true);
-    console.log(players);
     const playersToAdd = players.map((p) => ({
       name: p.name,
       verified: p.verified,
@@ -84,7 +86,6 @@ const TeamData = (props) => {
       name: p.name,
       verified: p.verified,
     }));
-    console.log(formatedReturnedPlayewrs, players);
 
     if (
       JSON.stringify(playersToAdd) === JSON.stringify(formatedReturnedPlayewrs)
@@ -150,17 +151,16 @@ const TeamData = (props) => {
             key={index}
             id={player.id}
             onClick={verifyPlayer}
-            class="checkbox-wrapper-47"
+            className="checkbox-wrapper-47"
           >
             <input
               type="checkbox"
               name="cb"
               id="cb-47"
+              onChange={verifyPlayer}
               checked={player.verified}
             />
-            <label id={player.id} for="cb-47">
-              {"  " + player.name}
-            </label>
+            <label id={player.id}>{"  " + player.name}</label>
           </div>
         ))}
       </div>

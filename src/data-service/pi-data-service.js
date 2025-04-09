@@ -117,7 +117,6 @@ const UpdateTeamPlayers_QUERY = gql`
   }
 `;
 export const updatePlayers = async (teamName, players) => {
-  console.log("potato", { teamName, players });
   const { errors, data } = await client.mutate({
     mutation: UpdateTeamPlayers_QUERY,
     variables: { players, teamName },
@@ -126,7 +125,6 @@ export const updatePlayers = async (teamName, players) => {
     console.error("GraphQL Errors:", errors);
     throw new Error("Errors returned from the server.");
   }
-  console.log("updated player data:", data.updateTeamPlayers);
   return data.updateTeamPlayers;
 };
 
@@ -161,7 +159,6 @@ export const getAllTeams = async () => {
     console.error("GraphQL Errors:", errors);
     throw new Error("Errors returned from the server.");
   }
-  console.log("Fetched Data:", data.getAllTeam);
   return data.getAllTeam;
 };
 
@@ -179,7 +176,6 @@ export const getTableData = async () => {
     console.error("GraphQL Errors:", errors);
     throw new Error("Errors returned from the server.");
   }
-  console.log("Fetched Data:", data.getTableData);
   return data.getTableData;
 };
 
@@ -243,6 +239,5 @@ export const getAllAvailableColors = async () => {
     console.error("GraphQL Errors:", errors);
     throw new Error("Errors returned from the server.");
   }
-  console.log("Fetched Data:", data.getAvailableColors);
   return data.getAvailableColors;
 };
