@@ -154,6 +154,25 @@ const TeamData = (props) => {
       </div>
 
       <div style={styles.sectionDivs}>
+        <div>Director Details</div>
+        <div>{rowDataFromBe.directorName}</div>
+        <div>
+          {" "}
+          <a href={"tel:" + rowDataFromBe.directorPhone}>
+            {" "}
+            {rowDataFromBe.directorPhone}{" "}
+          </a>
+        </div>
+        <div>
+          {" "}
+          <a href={"mailto:" + rowDataFromBe.directorEmail}>
+            {" "}
+            {rowDataFromBe.directorEmail}{" "}
+          </a>
+        </div>
+      </div>
+
+      <div style={styles.sectionDivs}>
         <div>Players</div>
         {players.map((player, index) => (
           <div

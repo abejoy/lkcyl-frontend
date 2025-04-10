@@ -26,6 +26,9 @@ const ADD_TEAM_MUTATION = gql`
     $contactMessage: String!
     $captainPhone: String!
     $managerPhone: String!
+    $directorName: String!
+    $directorEmail: String!
+    $directorPhone: String!
   ) {
     addTeam(
       teamName: $teamName
@@ -40,6 +43,9 @@ const ADD_TEAM_MUTATION = gql`
       additionalMessage: $contactMessage
       captainPhone: $captainPhone
       managerPhone: $managerPhone
+      directorName: $directorName 
+      directorEmail: $directorEmail 
+      directorPhone: $directorPhone 
     ) {
       teamName
       managerName
@@ -52,6 +58,9 @@ const ADD_TEAM_MUTATION = gql`
       additionalMessage
       captainPhone
       managerPhone
+      directorName
+      directorEmail
+      directorPhone
       players {
         name
         verified
@@ -69,6 +78,9 @@ export const submitForm = async (formdata) => {
     captainEmail,
     selectedColor,
     tournamentGender,
+    directorName,
+    directorEmail,
+    directorPhone,
     unit,
     players,
     managerName,
@@ -82,6 +94,9 @@ export const submitForm = async (formdata) => {
       managerEmail,
       captainName,
       captainEmail,
+      directorName,
+      directorEmail,
+      directorPhone,
       selectedColor,
       tournamentGender,
       unit,
@@ -103,6 +118,9 @@ const UpdateTeamPlayers_QUERY = gql`
       managerEmail
       captainName
       captainEmail
+      directorName
+      directorEmail
+      directorPhone
       teamColor
       kcylUnit
       gender
@@ -136,6 +154,9 @@ const GET_ALL_TEAMS = gql`
       managerEmail
       captainName
       captainEmail
+      directorName
+      directorEmail
+      directorPhone
       teamColor
       kcylUnit
       gender
@@ -186,6 +207,9 @@ const GET_TEAM_BY_TEAM_NAME_QUERY = gql`
       managerName
       managerEmail
       managerPhone
+      directorName
+      directorEmail
+      directorPhone
       captainName
       captainEmail
       captainPhone

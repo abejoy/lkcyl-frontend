@@ -315,7 +315,7 @@ const Contact = (props) => {
                   <input
                     required
                     type="text"
-                    placeholder="Manager/Director Full Name"
+                    placeholder="Manager Full Name"
                     defaultValue=""
                     size="35"
                     id="managerName"
@@ -329,7 +329,7 @@ const Contact = (props) => {
                   <input
                     required
                     type="text"
-                    placeholder="Manager/Director Email"
+                    placeholder="Manager Email"
                     defaultValue=""
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                     size="35"
@@ -344,7 +344,7 @@ const Contact = (props) => {
                   <input
                     required
                     type="tel"
-                    placeholder="Manager/Director Phone Number"
+                    placeholder="Manager Phone Number"
                     pattern="[0-9]{11}"
                     size="35"
                     id="managerPhone"
@@ -353,7 +353,48 @@ const Contact = (props) => {
                   />
                 </div>
 
-                {/* TODO color selection here */}
+                <div>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Director Full Name"
+                    defaultValue=""
+                    size="35"
+                    id="directorName"
+                    name="directorName"
+                    onChange={handleChange}
+                    onFocus={showManagerBubble}
+                  />
+                </div>
+
+                <div>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Director Email"
+                    defaultValue=""
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    size="35"
+                    id="directorEmail"
+                    name="directorEmail"
+                    onChange={handleChange}
+                    onFocus={showEmailRequirments}
+                  />
+                </div>
+
+                <div className="textfeildfront">
+                  <input
+                    required
+                    type="tel"
+                    placeholder="Director Phone Number"
+                    pattern="[0-9]{11}"
+                    size="35"
+                    id="directorPhone"
+                    name="directorPhone"
+                    onChange={handleChange}
+                  />
+                </div>
+
 
                 <div>
                   <select
