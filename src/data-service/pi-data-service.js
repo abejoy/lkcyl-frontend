@@ -30,8 +30,8 @@ const ADD_TEAM_MUTATION = gql`
     addTeam(
       teamName: $teamName
       managerEmail: $managerEmail
-      captianName: $captainName
-      captianEmail: $captainEmail
+      captainName: $captainName
+      captainEmail: $captainEmail
       teamColor: $selectedColor
       gender: $tournamentGender
       kcylUnit: $unit
@@ -44,8 +44,8 @@ const ADD_TEAM_MUTATION = gql`
       teamName
       managerName
       managerEmail
-      captianName
-      captianEmail
+      captainName
+      captainEmail
       teamColor
       kcylUnit
       gender
@@ -101,8 +101,8 @@ const UpdateTeamPlayers_QUERY = gql`
       teamName
       managerName
       managerEmail
-      captianName
-      captianEmail
+      captainName
+      captainEmail
       teamColor
       kcylUnit
       gender
@@ -134,8 +134,8 @@ const GET_ALL_TEAMS = gql`
       teamName
       managerName
       managerEmail
-      captianName
-      captianEmail
+      captainName
+      captainEmail
       teamColor
       kcylUnit
       gender
@@ -186,8 +186,8 @@ const GET_TEAM_BY_TEAM_NAME_QUERY = gql`
       managerName
       managerEmail
       managerPhone
-      captianName
-      captianEmail
+      captainName
+      captainEmail
       captainPhone
       teamColor
       kcylUnit

@@ -116,8 +116,8 @@ const TeamData = (props) => {
       </div>
 
       <div style={styles.sectionDivs}>
-        <div>Captians Details</div>
-        <div>{rowDataFromBe.captianName}</div>
+        <div>Captain Details</div>
+        <div>{rowDataFromBe.captainName}</div>
         <div>
           {" "}
           <a href={"tel:" + rowDataFromBe.captainPhone}>
@@ -127,9 +127,9 @@ const TeamData = (props) => {
         </div>
         <div>
           {" "}
-          <a href={"mailto:" + rowDataFromBe.captianEmail}>
+          <a href={"mailto:" + rowDataFromBe.captainEmail}>
             {" "}
-            {rowDataFromBe.captianEmail}{" "}
+            {rowDataFromBe.captainEmail}{" "}
           </a>
         </div>
       </div>
