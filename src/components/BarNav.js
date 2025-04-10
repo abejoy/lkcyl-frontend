@@ -26,9 +26,9 @@ const BarNav = (props) => {
       <li>
       <Link to="/gallery" style={getLinkStyle("/gallery")}>Gallery</Link>
       </li>
-      <li>
+      {/* <li>
       <Link to="/football" style={getLinkStyle("/football")}>Football Registration</Link>
-      </li>
+      </li> */}
       <li>
       <Link to="/footballstats" style={getLinkStyle("/footballstats")}>Football stats</Link>
       </li>
