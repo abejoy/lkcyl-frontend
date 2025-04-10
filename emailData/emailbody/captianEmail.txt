@@ -618,7 +618,7 @@
                                           mso-line-height-rule: exactly;
                                           mso-text-raise: 2px;
                                         "
-                                        >July 13th</span
+                                        >July 19th</span
                                       ><span
                                         class="t11"
                                         style="
@@ -640,7 +640,7 @@
                                         team&#39;s spot in the tournament, we
                                         kindly request that one person from your
                                         team has sent the registration fee to us
-                                        by June 15th 2024 at 6pm. Failure to do
+                                        by June 19th 2025 at 6pm. Failure to do
                                         so may result in forfeiture of your
                                         team&#39;s spot in the tournament.
                                         <br />﻿<br />﻿The details to where you
@@ -771,7 +771,7 @@
                                         mso-text-raise: 1px;
                                       "
                                     >
-                                      See you on July 13th
+                                      See you on July 19th
                                     </p>
                                   </td>
                                 </tr>
@@ -810,7 +810,7 @@
                                         mso-text-raise: 3px;
                                       "
                                     >
-                                      Website and Email Designed by Jesvin Joys
+                                      Website and Email Designed by Jesvin Joys & Toms Xavi
                                     </p>
                                   </td>
                                 </tr>

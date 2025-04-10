@@ -202,7 +202,7 @@ header .scrolldown a:hover { color: #11ABB0; }
    display: flex;
    justify-content: center;
 }
-.opaque { background-color: #333; }
+.opaque { background-color: #000000; }
 
 /* hide toggle button */
 #nav-wrap > a.mobile-btn { display: none; }

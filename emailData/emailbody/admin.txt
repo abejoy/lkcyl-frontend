@@ -148,7 +148,7 @@ h1,img,p{margin:0;Margin:0;font-family:Albert Sans,BlinkMacSystemFont,Segoe UI,H
 </td></tr><tr><td>
 <table class="t25" role="presentation" cellpadding="0" cellspacing="0" align="center"><tr>
 <td class="t24" style="width:480px;">
-<p class="t23" style="margin:0;Margin:0;font-family:Albert Sans,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;line-height:22px;font-weight:500;font-style:normal;font-size:12px;text-decoration:none;text-transform:none;direction:ltr;color:#000000;text-align:center;mso-line-height-rule:exactly;mso-text-raise:3px;">Website and Email Designed by Jesvin Joys</p></td>
+<p class="t23" style="margin:0;Margin:0;font-family:Albert Sans,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;line-height:22px;font-weight:500;font-style:normal;font-size:12px;text-decoration:none;text-transform:none;direction:ltr;color:#000000;text-align:center;mso-line-height-rule:exactly;mso-text-raise:3px;">Website and Email Designed by Jesvin Joys & Toms Xavi</p></td>
 </tr></table>
 </td></tr><tr><td>
 <table class="t29" role="presentation" cellpadding="0" cellspacing="0" align="center"><tr>
