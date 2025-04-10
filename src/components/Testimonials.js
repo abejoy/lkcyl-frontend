@@ -1,9 +1,19 @@
 import React from 'react';
 import { Container, Card } from 'react-bootstrap';
 import './Testimonials.css';
+import { useNavigate } from 'react-router-dom';
 
 const Testimonials = ({ data }) => {
+  const navigate = useNavigate();
   if (!data || !data.testimonials) return null;
+
+  const handleCardClick = (e) => {
+    const { name } = e;
+    if (name === 'Football Tournament') {
+      navigate('/football');
+    }
+
+  }
 
   return (
     <section id="testimonials" className="py-5" style={{ backgroundColor: '#1F1F1F' }}>
@@ -21,7 +31,9 @@ const Testimonials = ({ data }) => {
             <Card
               key={index}
               className="event-card text-white bg-dark"
-              style={{ borderRadius: '30px' }}
+              style={{ borderRadius: '30px', cursor: testimonial.name === 'Football Tournament' ? 'pointer' : 'default' }}
+              testimonial={testimonial}
+              onClick={() =>handleCardClick(testimonial)}
             >
               <Card.Body className="text-center" style={{ borderRadius: '30px' }}>
                 <Card.Title className="fw-bold mb-3">{testimonial.name}</Card.Title>

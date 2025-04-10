@@ -6,7 +6,7 @@ const BarNav = (props) => {
 
   // Function to determine the active style
   const getLinkStyle = (path) => {
-    return location.pathname === path ? { color: "yellow", fontWeight: "bold" } : {};
+    return location.pathname === path ? { color: "#FFA447", fontWeight: "bold" } : {};
   };
 
   return (
