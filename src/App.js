@@ -10,6 +10,7 @@ import "react-notifications-component/dist/theme.css";
 import ImageCarousel from './components/ImageCarousel';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Gallery from "./components/Gallery";
+import FootballStats from "./components/FootballStats";
 
 const App = () => {
   return (
@@ -39,6 +40,13 @@ const App = () => {
           <div className="App">
             <ReactNotifications />
             <Contact data={resumeData.main} />
+            <Footer data={resumeData.main} />
+          </div>
+          } />
+          <Route path="/footballstats" element={
+          <div className="App">
+            <ReactNotifications />
+            <FootballStats />
             <Footer data={resumeData.main} />
           </div>
           } />
