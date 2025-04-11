@@ -626,8 +626,8 @@
                                           margin: 0;
                                           mso-line-height-rule: exactly;
                                         "
-                                        >, and we are excited to have your KCYL Unit
-                                        participating. <br />﻿<br />﻿To ensure a fair and enjoyable
+                                        >, and we are excited to have you and
+                                        your team to join us. <br />﻿<br />﻿To ensure a fair and enjoyable
                                         experience for all, we kindly remind you
                                         that everyone in your team needs to wear
                                         the same colour $color that you have
@@ -694,11 +694,8 @@
                                         do not hesitate to reach out to us at
                                         london.region.kcyl@gmail.com. We are
                                         more than happy to assist you in any way
-                                        we can.<br />﻿<br />﻿Please ensure that
-                                        these are the players from your team,
-                                        (if any members change please let us
-                                        know, the amendments):
-                                        <br />﻿$allPlayers <br />﻿<br />﻿Thank
+                                        we can.<br />﻿<br />﻿Please ensure that these are the players from your team and reply to this email to confirm their verification. If your team is combining with multiple units, as the designated director for this team, you are also responsible for verifying the players from the other units. If any members change, please let us know so we can make the necessary amendments.
+                                        <br />﻿<br />$allPlayers <br />﻿<br />﻿Thank
                                         you for your attention to these
                                         important details, and we look forward
                                         to seeing you on the field!

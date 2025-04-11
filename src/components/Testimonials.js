@@ -3,13 +3,14 @@ import { Container, Card } from 'react-bootstrap';
 import './Testimonials.css';
 import { useNavigate } from 'react-router-dom';
 
+const footballTournamentName = 'LKCYL 7-a-side Football Tournament'
 const Testimonials = ({ data }) => {
   const navigate = useNavigate();
   if (!data || !data.testimonials) return null;
 
   const handleCardClick = (e) => {
     const { name } = e;
-    if (name === 'Football Tournament') {
+    if (name === footballTournamentName) {
       navigate('/football');
     }
 
@@ -31,7 +32,7 @@ const Testimonials = ({ data }) => {
             <Card
               key={index}
               className="event-card text-white bg-dark"
-              style={{ borderRadius: '30px', cursor: testimonial.name === 'Football Tournament' ? 'pointer' : 'default' }}
+              style={{ borderRadius: '30px', cursor: testimonial.name === footballTournamentName ? 'pointer' : 'default' }}
               testimonial={testimonial}
               onClick={() =>handleCardClick(testimonial)}
             >

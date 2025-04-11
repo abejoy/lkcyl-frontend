@@ -61,9 +61,6 @@ header .banner {
    text-align: initial;
 }
 
-.submitButton {
-   margin-left: -60rem;
-}
 
 .fakecenter {
    margin-left: 35rem;
@@ -83,9 +80,6 @@ header .banner {
       max-width: 1920px;
    }
    .fakecenter {
-      margin-left: 0;
-   }
-   .submitButton {
       margin-left: 0;
    }
    
@@ -857,136 +851,207 @@ call-to-action .button {
 /* h. Contact Section
 /* ------------------------------------------------------------------ */
 
+/*==============================
+  SECTION BASE
+==============================*/
+
 #contact {
    background: #191919;
-   padding-top: 96px;
-   padding-bottom: 102px;
-   color: #636363;
-}
-#contact .section-head { margin-bottom: 42px; }
-
-#contact a, #contact a:visited  { color: #11ABB0; }
-#contact a:hover, #contact a:focus { color: #fff; }
-
-#contact h1 {
+   padding: 96px 0 102px;
+   color: #cfcfcf;
+ }
+ 
+ #contact .section-head {
+   margin-bottom: 42px;
+ }
+ 
+ /* #contact a,
+ #contact a:visited {
+   color: #11ABB0;
+ } */
+ 
+ #contact a:hover,
+ #contact a:focus {
+   color: #fff;
+ }
+ 
+ #contact h1 {
    font: 18px/24px 'opensans-bold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 3px;
    color: #EBEEEE;
    margin-bottom: 6px;
-}
-#contact h1 span { display: none; }
-#contact h1:before {
+ }
+ 
+ #contact h1:before {
    font-family: 'FontAwesome';
-   content: "\f0e0";
-	padding-right: 10px;
-	font-size: 72px;
+   /* content: "\f0e0"; */
+   padding-right: 10px;
+   font-size: 72px;
    line-height: 72px;
    text-align: left;
    float: left;
    color: #ebeeee;
-}
-
-#contact h4 {
-   font: 16px/24px 'opensans-bold', sans-serif;
-   color: #EBEEEE;
-   margin-bottom: 6px;
-}
-#contact p.lead {
-   font: 18px/36px 'opensans-light', sans-serif;
-   padding-right: 3%;
-}
-#contact .header-col { padding-top: 6px; }
-
-
-/* contact form */
-#contact form { margin-bottom: 30px; }
-#contact label {
-   font: 15px/24px 'opensans-bold', sans-serif;
-   margin: 12px 0;
-   color: #EBEEEE;
-	display: inline-block;
-	float: left;
-   width: 26%;
-}
-#contact input,
-#contact textarea,
-#contact select {
-   padding: 18px 20px;
-	color: #eee;
-	background: #373233;
-	margin-bottom: 42px;
-	border: 0;
-	outline: none;
+ }
+ 
+ /*==============================
+   FORM SECTIONS & FIELDSETS
+ ==============================*/
+ 
+ .form-group-section {
+   margin-bottom: 48px;
+   padding: 32px;
+   background-color: #222;
+   border-radius: 8px;
+   box-shadow: 0 0 16px rgba(255, 255, 255, 0.04);
+   border: 1px solid #2e2e2e;
+ }
+ 
+ .form-group-section h3 {
+   font: 18px 'opensans-bold', sans-serif;
+   color: #ffffff;
+   border-bottom: 1px solid #333;
+   margin-bottom: 20px;
+   padding-bottom: 10px;
+ }
+ 
+ /*==============================
+   INPUTS & LABELS
+ ==============================*/
+ 
+ #contact form {
+   margin-bottom: 30px;
+ }
+ 
+ #contact input,
+ #contact textarea,
+ #contact select {
+   padding: 14px 18px;
+   color: #eee;
+   background: #373233;
+   margin-bottom: 24px;
+   border: none;
+   outline: none;
    font-size: 15px;
    line-height: 24px;
-   width: 65%;
-}
-#contact input:focus,
-#contact textarea:focus,
-#contact select:focus {
-	color: #fff;
-	background-color: #11ABB0;
-}
-#contact button.submit {
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color:#fff;
-   background: #0D0D0D;
-	border: none;
-   cursor: pointer;
-   height: auto;
-   display: inline-block;
-	border-radius: 3px;
-   margin-left: 26%;
-}
-#contact button.submit:hover {
-	color: #0D0D0D;
-	background: #fff;
-}
-#contact span.required {
-	color: #11ABB0;
-	font-size: 13px;
-}
-#message-warning, #message-success {
-	background: #0F0F0F;
-	padding: 24px 24px;
-	margin-bottom: 36px;
-   width: 65%;
-   margin-left: 26%;
-}
-#message-warning { color: #D72828; }
-#message-success { color: #11ABB0; }
-
-#message-warning i,
-#message-success i {
-   margin-right: 10px;
-}
-#image-loader {
-   display: none;
-   position: relative;
-   left: 18px;
-   top: 17px;
-}
-
-
-/* Twitter Feed */
-#twitter {
-   margin-top: 12px;
-   padding: 0;
-}
-#twitter li {
-   margin: 6px 0px 12px 0;
-   line-height: 30px;
-}
-#twitter li span {
+   width: 100%;
+   border-radius: 6px;
+   transition: background 0.3s ease;
+ }
+ 
+ #contact input:focus,
+ #contact textarea:focus,
+ #contact select:focus {
+   /* background-color: #11ABB0; */
+   color: #fff;
+ }
+ 
+ #contact label {
    display: block;
-}
-#twitter li b a {
-   font: 13px/36px 'opensans-regular', Sans-serif;
-   color: #474747 !important;
+   font: 14px 'opensans-bold', sans-serif;
+   margin: 0 0 8px;
+   color: #EBEEEE;
+ }
+ 
+ #contact textarea {
+   resize: vertical;
+   min-height: 120px;
+ }
+ 
+ /*==============================
+   SUBMIT BUTTON
+ ==============================*/
+ 
+ #contact button.submit {
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   color: #fff;
+   background: #0d6efd;
    border: none;
-}
+   padding: 16px 32px;
+   border-radius: 5px;
+   cursor: pointer;
+   font: 14px 'opensans-bold', sans-serif;
+   transition: all 0.3s ease;
+ }
+ 
+ #contact button.submit:hover {
+   background: #198754;
+   color: #fff;
+ }
+
+ #contact button.submit {
+   width: 100%;
+   margin-top: 16px;
+ }
+ 
+ /*==============================
+   NOTIFICATION MESSAGES
+ ==============================*/
+ 
+ #message-warning,
+ #message-success {
+   background: #0F0F0F;
+   padding: 20px;
+   margin-bottom: 36px;
+   width: 100%;
+   border-radius: 6px;
+ }
+ 
+ #message-warning {
+   color: #D72828;
+ }
+ 
+ #message-success {
+   color: #11ABB0;
+ }
+ 
+ #message-warning i,
+ #message-success i {
+   margin-right: 10px;
+ }
+ 
+ /*==============================
+   CONTACT DETAILS SIDEBAR
+ ==============================*/
+ 
+ .footer-widgets {
+   margin-top: 32px;
+   padding-left: 20px;
+ }
+ 
+ .widget_contact h4 {
+   font: 16px/24px 'opensans-bold', sans-serif;
+   color: #EBEEEE;
+   margin-bottom: 12px;
+ }
+ 
+ .widget_contact p.address {
+   font-size: 14px;
+   color: #ccc;
+   margin-bottom: 10px;
+ }
+ 
+ .widget_contact p.address a {
+   color: #11ABB0;
+   text-decoration: none;
+ }
+ 
+ .widget_contact p.address a:hover {
+   color: #fff;
+ }
+ 
+ /*==============================
+   Responsive Enhancements
+ ==============================*/
+ 
+ @media screen and (max-width: 768px) {
+   .form-group-section {
+     padding: 20px;
+   }
+
+ }
+ 
 
 
 /* ------------------------------------------------------------------ */
