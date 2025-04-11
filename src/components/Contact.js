@@ -134,14 +134,14 @@ const Contact = (props) => {
     <>
       <BarNav />
       <section id="contact">
-        <div className="row section-head">
-          <div className="twelve columns">
+        <div>
+          <div>
             <h1><span>Football Tournament Registration</span></h1>
             <p className="lead">{message}</p>
           </div>
         </div>
 
-        <div style={{padding: '5%'}}>
+        <div style={{paddingRight: '5%', paddingLeft: '5%'}}>
           <div >
             <form onSubmit={buttonClicked} id="contactForm" name="contactForm">
               <fieldset>

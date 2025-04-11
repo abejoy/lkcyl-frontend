@@ -108,30 +108,26 @@
   },
   "testimonials": {
     "testimonials": [
+ 
       {
-        "name": "Youth Gathering & BBQ",
-        "text": "Join us for food, games, and fellowship at Hyde Park.",
-        "date": "Saturday 13th July, 2:00 PM",
-        "location": "Hyde Park, London"
+        "name": "LKCYL 7-a-side Football Tournament",
+        "text": "A thrilling day of competitive football bringing together teams from across the UK.",
+        "date": "Saturday 19th July 2025",
+        "location": "The Arena, Hitchin Town Community Football Club, Norton Rd, Baldock, SG7 5AU"
       },
       {
-        "name": "Football Tournament",
-        "text": "Join us for a fun day of football and friendly competition.",
-        "date": "Saturday 13th July, 10:00 AM",
-        "location": "Local Football Field, London"
+        "name": "⁠LKCYL Get-Together",
+        "text": "An evening of fun, food, and community celebration for all LKCYL members.",
+        "date": "August 23rd, 2025",
+        "location": " St Albans RC Church Hall, Langdale Gardens, Hornchurch, RM12 5JX"
       },
       {
-        "name": "LKCYL Paintballing",
-        "text": "Get ready for an action-packed day of paintballing!",
-        "date": "Coming Soon",
-        "location": ""
-      },
-      {
-        "name": "3 Day South Camp",
-        "text": "Join us for a 3-day camp filled with fun and activities.",
-        "date": "Coming Soon",
-        "location": ""
+        "name": "⁠LKCYL Annual Camp 2025",
+        "text": "A weekend retreat filled with faith, fellowship, and outdoor adventure.",
+        "date": "September 26th to 28th 2025",
+        "location": "Moat Mount Outdoors Centre, Barnet Wy, London, NW7 5AL"
       }
+      
     ]
   },
   "ukkcaunits": [
