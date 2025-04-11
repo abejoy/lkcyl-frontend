@@ -127,7 +127,7 @@ const Contact = (props) => {
   const conbinedUnitsSelected = () => showToast("Combined Units", "If you are combining units please add the units you are combining in Additional Message or comments", "success");
   const handleColorFocus = () => showToast("Team Colour", "All players are required to wear the colour of the team selected", "success");
 
-  const contacts = props.data?.contacts || [];
+  // const contacts = props.data?.contacts || [];
   const message = props.data?.contactmessage || "";
 
   return (
