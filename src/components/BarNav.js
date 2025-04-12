@@ -1,40 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo.png";
+import "./BarNav.css";
 
-const BarNav = (props) => {
-  const location = useLocation(); // Get the current route
+const BarNav = () => {
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to determine the active style
   const getLinkStyle = (path) => {
-    return location.pathname === path ? { color: "#FFA447", fontWeight: "bold" } : {};
+    return location.pathname === path
+      ? { color: "#FFA447", fontWeight: "bold" }
+      : {};
   };
 
   return (
-    <>
     <nav id="nav-wrap">
-    <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
-      Show navigation
-    </a>
-    <a className="mobile-btn" href="#home" title="Hide navigation">
-      Hide navigation
-    </a>
+      <div className="nav-logo">
+        <Link to="/" className="logo-link" onClick={() => setIsMenuOpen(false)}>
+          <img src={logo} alt="LKCYL Logo" />
+          <span className="logo-text">LKCYL</span>
+        </Link>
+      </div>
 
-    <ul id="nav" className="nav">
-      <li>
-      <Link to="/" style={getLinkStyle("/")} >Home</Link>
-      </li>
-      <li>
-      <Link to="/gallery" style={getLinkStyle("/gallery")}>Gallery</Link>
-      </li>
-      <li>
-      <Link to="/football" style={getLinkStyle("/football")}>Football Registration</Link>
-      </li>
-      {/* <li>
-      <Link to="/footballstats" style={getLinkStyle("/footballstats")}>Football stats</Link>
-      </li> */}
-    </ul>
-  </nav>
-  </>
+      <button
+        className="hamburger"
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+        aria-label="Toggle menu"
+      >
+        <div className="bar" />
+        <div className="bar" />
+        <div className="bar" />
+      </button>
+
+      <ul id="nav" className={`nav ${isMenuOpen ? "show" : ""}`}>
+        {/* <li>
+          <Link to="/" style={getLinkStyle("/")} onClick={() => setIsMenuOpen(false)}>
+            Home
+          </Link>
+        </li> */}
+        <li>
+          <Link to="/gallery" style={getLinkStyle("/gallery")} onClick={() => setIsMenuOpen(false)}>
+            Gallery
+          </Link>
+        </li>
+        <li>
+          <Link to="/football" style={getLinkStyle("/football")} onClick={() => setIsMenuOpen(false)}>
+            Football Registration
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
