@@ -11,6 +11,9 @@ import ImageCarousel from './components/ImageCarousel';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Gallery from "./components/Gallery";
 import FootballStats from "./components/FootballStats";
+import MeetTheCommittee from './components/MeetTheCommittee';
+
+
 
 const App = () => {
   return (
@@ -50,6 +53,13 @@ const App = () => {
             <Footer data={resumeData.main} />
           </div>
           } />
+          <Route path="/committee" element={
+          <div className="App">
+            <ReactNotifications />
+            <MeetTheCommittee />
+            <Footer data={resumeData.main} />
+          </div>
+        } />
       </Routes>
     </Router>
   );
