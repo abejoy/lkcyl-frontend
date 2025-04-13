@@ -1,130 +1,87 @@
 #nav-wrap {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background-color: #111;
+  flex-wrap: nowrap; /* ✅ Prevents wrapping on mobile */
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  width: 0;
+  animation: typing 2s steps(6, end) forwards, blink-caret 0.5s step-end 6 forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 6.5ch }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #fff; }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav li a:hover {
+  color: #0d6efd;
+}
+
+/* ✅ Prevent layout from stacking on small screens */
+@media (max-width: 768px) {
+  #nav-wrap {
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 2rem;
-    background-color: #111;
-  }
-  
-  .nav-logo img {
-    height: 50px;
-    width: auto;
-    margin-right: 2rem;
-  }
-  
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    padding-left: 2rem;
-  }
-  
-  .logo-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none !important; /* 🔥 Force it */
-    color: inherit; /* keeps it same color as nav links */
-  }
-  
-  .nav-logo img {
-    height: 40px;
-    width: auto;
-    margin-right: 10px;
-  }
-  
-  .logo-text {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-left: 0.5rem;
-    padding-top: 2px;
-    text-decoration: none;
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid #fff;
-    width: 0;
-    animation:
-      typing 2s steps(7, end) forwards, /* use 7 steps for 6 characters including space */
-      blink-caret 0.5s step-end 6 forwards;
-  }
-  
-  /* Typing animation */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 6.5ch }  /* a little extra to avoid cutting off */
-  }
-  
-  /* Caret blink animation */
-  @keyframes blink-caret {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: #fff; }
-  }
-  
-  
-  
-  
-  
-
-.logo-link:visited,
-.logo-link:hover,
-.logo-link:active {
-  text-decoration: none !important; /* 🔥 Covers all states */
-}
-
-#nav-wrap .nav li a {
-    color: #fff; /* Make text white */
-    text-decoration: none;
-  }
-  
-  #nav-wrap .nav li a:hover {
-    color: #0d6efd; /* Optional: Orange on hover */
-  }
-
-  .hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-left: auto;
-}
-
-.hamburger .bar {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+    padding: 0.75rem 1rem;
   }
 
   .nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background-color: #111;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    z-index: 1000;
+    gap: 1rem;
+    flex-direction: row; /* Force horizontal nav on mobile */
   }
 
-  .nav.show {
-    display: flex;
+  .nav li a {
+    font-size: 0.9rem;
   }
 }
-
-  
-
-  
-  
