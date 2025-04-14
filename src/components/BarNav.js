@@ -3,6 +3,15 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./BarNav.css";
 
+const barNavNames = [
+  { name: "Home", path: "/" },
+  { name: "Gallery", path: "/gallery" },
+  { name: 'Meet the Committee', path: '/committee'},
+  { name: "Football Registration", path: "/football" },
+];
+
+
+
 const BarNav = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,21 +39,13 @@ const BarNav = () => {
       </div>
 
       <ul id="nav" className={`nav ${isMenuOpen ? "open" : "close"}`}>
-        <li>
-          <Link to="/" style={getLinkStyle("/")}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/gallery" style={getLinkStyle("/gallery")}>
-            Gallery
-          </Link>
-        </li>
-        <li>
-          <Link to="/football" style={getLinkStyle("/football")}>
-            Football Registration
-          </Link>
-        </li>
+        {barNavNames.map((item, index) => (
+          <li key={index}>
+            <Link to={item.path} style={getLinkStyle(item.path)}>
+              {item.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

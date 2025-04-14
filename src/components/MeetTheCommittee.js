@@ -46,6 +46,20 @@ const committeeMembers = [
     description: "Coming Soon",
     instagram: "",
   },
+  {
+    name: "Abraham Joys",
+    role: "Techinical Team",
+    image: "abe.jpg",
+    description: "Working on the technical aspects our website and system.",
+    instagram: "https://www.instagram.com/abe.jesvin/",
+  },
+  {
+    name: "Toms Xavi",
+    role: "Techinical Team",
+    image: "toms.jpeg",
+    description: "Working on the technical aspects our website and system.",
+    instagram: "https://www.linkedin.com/in/toms-xavi-99693b2a3/",
+  },
 ];
 
 const getImage = (imagePath) => {
@@ -69,14 +83,8 @@ const MeetTheCommittee = () => {
       <section className="committee-section">
         <h2 className="section-heading">Meet the Committee</h2>
         <div className="card-grid">
-          {committeeMembers.map((member, index) => (
-            <a
-              key={index}
-              href={member.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="event-card-link"
-            >
+          {committeeMembers.map((member, index) => {
+            const cardContent = (
               <div className="event-card">
                 <img
                   src={getImage(member.image)}
@@ -87,8 +95,22 @@ const MeetTheCommittee = () => {
                 <p className="event-meta">{member.role}</p>
                 <p className="event-details">{member.description}</p>
               </div>
-            </a>
-          ))}
+            );
+
+            return member.instagram ? (
+              <a
+                key={index}
+                href={member.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="event-card-link"
+              >
+                {cardContent}
+              </a>
+            ) : (
+              <div key={index}>{cardContent}</div>
+            );
+          })}
         </div>
       </section>
     </>
