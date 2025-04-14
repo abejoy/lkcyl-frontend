@@ -143,7 +143,16 @@ const Contact = (props) => {
 
         <div style={{paddingRight: '5%', paddingLeft: '5%'}}>
           <div >
-            <form onSubmit={buttonClicked} id="contactForm" name="contactForm">
+          <form
+  onSubmit={buttonClicked}
+  id="contactForm"
+  name="contactForm"
+  onKeyDown={(e) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Prevent form submission on "Enter"
+    }
+  }}
+>
               <fieldset>
                 <div className="form-section">
                   <h4>Team Details</h4>
