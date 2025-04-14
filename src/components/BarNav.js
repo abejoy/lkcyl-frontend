@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./BarNav.css";
 
 const BarNav = () => {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 
   const getLinkStyle = (path) => {
     return location.pathname === path
       ? { color: "#FFA447", fontWeight: "bold" }
       : {};
+  };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -19,17 +24,26 @@ const BarNav = () => {
           <img src={logo} alt="LKCYL Logo" />
           <span className="logo-text">LKCYL</span>
         </Link>
+        <button className="mobile-menu-btn" onClick={toggleMenu}>
+          ☰
+        </button>
       </div>
 
-      <ul id="nav" className="nav">
-        {/* <li>
-          <Link to="/" style={getLinkStyle("/")}>Home</Link>
-        </li> */}
+      <ul id="nav" className={`nav ${isMenuOpen ? "open" : "close"}`}>
         <li>
-          <Link to="/gallery" style={getLinkStyle("/gallery")}>Gallery</Link>
+          <Link to="/" style={getLinkStyle("/")}>
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/football" style={getLinkStyle("/football")}>Football Registration</Link>
+          <Link to="/gallery" style={getLinkStyle("/gallery")}>
+            Gallery
+          </Link>
+        </li>
+        <li>
+          <Link to="/football" style={getLinkStyle("/football")}>
+            Football Registration
+          </Link>
         </li>
       </ul>
     </nav>
