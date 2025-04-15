@@ -91,8 +91,7 @@ const Contact = (props) => {
   const override = {
     display: "block",
     margin: "0 auto",
-    borderColor: "red",
-    background: "#685dc3",
+    background: "#00000000",
   };
 
   const buttonClicked = async (e) => {
@@ -219,8 +218,8 @@ const Contact = (props) => {
                 </div>
 
                 <div className="submitButton">
-                  <button className="submit">
-                    Submit <HashLoader cssOverride={override} loading={loading} />
+                  <button className="submit" style={{cursor: loading ? 'not-allowed' : 'pointer'}} disabled={loading}>
+                    {loading ? 'Registering Team' :'Submit'} <HashLoader color="#ffffff" cssOverride={override} loading={loading} />
                   </button>
                 </div>
               </fieldset>
