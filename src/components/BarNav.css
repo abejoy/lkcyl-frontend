@@ -83,6 +83,8 @@
     z-index: 1000;
   }
 
+  #nav-wrap ul#nav { width: 90%; float: none; }
+
   .nav.open {
     display: flex;
   }
