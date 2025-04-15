@@ -127,14 +127,14 @@
         {
           "name": "Coming Soon",
           "role": "Joint Secretary",
-          "image": "maria.jpg",
+          "image": "unknown.png",
           "description": "Coming Soon",
           "instagram": ""
         },
         {
           "name": "Coming Soon",
           "role": "Joint Treasurer",
-          "image": "jaison.jpg",
+          "image": "unknown.png",
           "description": "Coming Soon",
           "instagram": ""
         },
@@ -158,46 +158,51 @@
       "sectionHeading": "LKCA",
       "items": [
         {
-          "name": "jibi",
+          "name": "Jibi John Anakuthickal",
           "role": "President",
           "image": "jibi.jpg",
-          "description": "East London Unit",
-          "instagram": "https://www.instagram.com/christie_johns_?igsh=MXZmaTRxamsyNWliOA=="
+          "description": "East London",
+          "instagram": "https://www.facebook.com/jibi.john.50"
         },
+
         {
-          "name": "Jesso",
+          "name": "Jesso Mathew Thattarattu",
           "role": "Secretary",
           "image": "jesso.jpg",
-          "description": "Harlow Unit",
-          "instagram": "https://www.instagram.com/_jake_joseph?igsh=NHl4MzI5ZmxjMTln"
+          "description": "Harlow",
+          "instagram": "https://www.instagram.com/jesso_mathew/?hl=en"
         },
+
         {
-          "name": "Thomas",
+          "name": "Thomas Pullattukalayill",
           "role": "Treasurer",
           "image": "thomas.jpg",
-          "description": "Manages our finances with transparency and care.",
-          "instagram": "https://www.instagram.com/jeffthomasss?igsh=c2djc2Q1NGVlaml4"
+          "description": "Basildon",
+          "Facebook": ""
         },
+
         {
-          "name": "Jimmy",
+          "name": "Jimmy Thomas Klacky",
           "role": "Vice President",
           "image": "jimmy.png",
-          "description": "Stevenage Unit",
-          "instagram": "https://www.instagram.com/leon.lalu?igsh=MTZvMGNwb3JuMXNqYg=="
+          "description": "Stevenage",
+          "Instagram": "https://www.facebook.com/jimmy.thomas.148116"
         },
+
         {
-          "name": "Albin",
+          "name": "Albin Sabu Alencherry",
           "role": "Joint Secretary",
           "image": "albin.jpg",
-          "description": "Coming Soon",
-          "instagram": ""
+          "description": "Harlow",
+          "Instagram": "https://www.instagram.com/alencherry_albin/"
         },
+
         {
-          "name": "James",
+          "name": "James Mathew Kunnath",
           "role": "Joint Treasurer",
           "image": "james.jpg",
-          "description": "North West London Unit",
-          "instagram": ""
+          "description": "Northwest London",
+          "Instagram": " https://www.facebook.com/james.mathew.188/"
         }
       ]
     }
