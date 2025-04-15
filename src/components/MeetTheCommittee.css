@@ -5,6 +5,16 @@
   padding: 6rem 5rem 2rem;
   text-align: center;
 }
+.committee-section-wrapper {
+  margin-bottom: 10rem;
+}
+
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 
 .section-heading {
   font-size: 3rem;
@@ -50,13 +60,16 @@
 }
 
 .committee-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: 2px solid #fff;
-  transition: border-color 0.3s ease;
+  display: block; /* Ensures the image behaves as a block-level element */
+  width: 175px; /* Fixed width */
+  height: 175px; /* Fixed height */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fills the container while maintaining aspect ratio */
+  object-position: center; /* Centers the image within the container */
+  margin-bottom: 1rem; /* Adds spacing below the image */
+  border: 2px solid #fff; /* Adds a white border */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+  background-color: #f4f4f4; /* Fallback background color for empty spaces */
 }
 
 .event-card-link:hover .committee-img {

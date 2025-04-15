@@ -32,6 +32,12 @@
   margin: 0;
 }
 
+ul#nav li {
+  position: relative;
+  list-style: none;
+  display: inline-block;
+}
+
 .nav li a {
   color: #fff;
   text-decoration: none;
@@ -70,6 +76,17 @@
   .nav-logo{
     width: 100%;
   }
+
+  ul#nav li {
+    height: 48px;
+  }
+
+  ul#nav {
+    width: auto;
+ 
+    /* center align the menu */
+    text-align: center;
+ }
 
   .nav {
     display: none;

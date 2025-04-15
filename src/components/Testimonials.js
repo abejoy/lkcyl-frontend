@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const footballTournamentName = 'LKCYL 7-a-side Football Tournament'
 const Testimonials = ({ data }) => {
   const navigate = useNavigate();
-  if (!data || !data.testimonials) return null;
+  if (!data || data.length === 0) return null;
 
   const handleCardClick = (e) => {
     const { name } = e;
@@ -28,24 +28,24 @@ const Testimonials = ({ data }) => {
 
 
         <div className="card-grid">
-          {data.testimonials.map((testimonial, index) => (
+          {data.map((upcomingEvent, index) => (
             <Card
               key={index}
               className="event-card text-white bg-dark"
-              style={{ borderRadius: '30px', cursor: testimonial.name === footballTournamentName ? 'pointer' : 'default' }}
-              testimonial={testimonial}
-              onClick={() =>handleCardClick(testimonial)}
+              style={{ borderRadius: '30px', cursor: upcomingEvent.name === footballTournamentName ? 'pointer' : 'default' }}
+              upcomingEvent={upcomingEvent}
+              onClick={() =>handleCardClick(upcomingEvent)}
             >
               <Card.Body className="text-center" style={{ borderRadius: '30px' }}>
-                <Card.Title className="fw-bold mb-3">{testimonial.name}</Card.Title>
+                <Card.Title className="fw-bold mb-3">{upcomingEvent.name}</Card.Title>
                 <Card.Text className="event-details mb-3">
-                  {testimonial.text}
+                  {upcomingEvent.text}
                 </Card.Text>
                 <Card.Text className="event-meta mb-1">
-                  <strong>Date:</strong> {testimonial.date}
+                  <strong>Date:</strong> {upcomingEvent.date}
                 </Card.Text>
                 <Card.Text className="event-meta">
-                  <strong>Location:</strong> {testimonial.location}
+                  <strong>Location:</strong> {upcomingEvent.location}
                 </Card.Text>
               </Card.Body>
             </Card>

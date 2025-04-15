@@ -26,7 +26,7 @@ const App = () => {
             <ReactNotifications />
             <Header data={resumeData.main} />
             <ImageCarousel />
-            <Testimonials data={resumeData.testimonials} />
+            <Testimonials data={resumeData.upcomingEvents} />
             {/* <Contact data={resumeData.main} /> */}
             <Footer data={resumeData.main} />
           </div>
@@ -56,7 +56,7 @@ const App = () => {
           <Route path="/committee" element={
           <div className="App">
             <ReactNotifications />
-            <MeetTheCommittee />
+            <MeetTheCommittee data={resumeData.committeeMembers}/>
             <Footer data={resumeData.main} />
           </div>
         } />

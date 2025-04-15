@@ -2,66 +2,6 @@ import React from "react";
 import "./MeetTheCommittee.css";
 import BarNav from './BarNav';
 
-const committeeMembers = [
-  {
-    name: "Christie Jibi Anakuthickal",
-    role: "President",
-    image: "christie.jpg",
-    description: "Leads the team with vision and passion for youth engagement.",
-    instagram:
-      "https://www.instagram.com/christie_johns_?igsh=MXZmaTRxamsyNWliOA==",
-  },
-  {
-    name: "Jake Joseph",
-    role: "Secretary",
-    image: "jake.jpg",
-    description: "Supports leadership and coordinates major events.",
-    instagram: "https://www.instagram.com/_jake_joseph?igsh=NHl4MzI5ZmxjMTln",
-  },
-  {
-    name: "Jeff Thomas",
-    role: "Treasurer",
-    image: "jeff.jpg",
-    description: "Manages our finances with transparency and care.",
-    instagram: "https://www.instagram.com/jeffthomasss?igsh=c2djc2Q1NGVlaml4",
-  },
-  {
-    name: "Leon Lalu",
-    role: "Vice President",
-    image: "leon.jpg",
-    description: "Organizes all our exciting events and get-togethers.",
-    instagram: "https://www.instagram.com/leon.lalu?igsh=MTZvMGNwb3JuMXNqYg==",
-  },
-  {
-    name: "Coming Soon",
-    role: "Joint Secretary",
-    image: "maria.jpg",
-    description: "Coming Soon",
-    instagram: "",
-  },
-  {
-    name: "Coming Soon",
-    role: "Joint Treasurer",
-    image: "jaison.jpg",
-    description: "Coming Soon",
-    instagram: "",
-  },
-  {
-    name: "Abraham Joys",
-    role: "Techinical Team",
-    image: "abe.jpg",
-    description: "Working on the technical aspects our website and system.",
-    instagram: "https://www.instagram.com/abe.jesvin/",
-  },
-  {
-    name: "Toms Xavi",
-    role: "Techinical Team",
-    image: "toms.jpeg",
-    description: "Working on the technical aspects our website and system.",
-    instagram: "https://www.linkedin.com/in/toms-xavi-99693b2a3/",
-  },
-];
-
 const getImage = (imagePath) => {
   try {
     const images = require.context(
@@ -76,42 +16,54 @@ const getImage = (imagePath) => {
   }
 };
 
-const MeetTheCommittee = () => {
+const MeetTheCommittee = (props) => {
+
+  const {data} = props;
+  if (!data || data?.length === 0 ) {
+    return null;
+  }
+
+  const committeeSections = data
+
   return (
     <>
       <BarNav />
       <section className="committee-section">
-        <h2 className="section-heading">Meet the Committee</h2>
-        <div className="card-grid">
-          {committeeMembers.map((member, index) => {
-            const cardContent = (
-              <div className="event-card">
-                <img
-                  src={getImage(member.image)}
-                  alt={member.name}
-                  className="committee-img"
-                />
-                <h3 className="card-title">{member.name}</h3>
-                <p className="event-meta">{member.role}</p>
-                <p className="event-details">{member.description}</p>
-              </div>
-            );
+        {committeeSections.map((section, sectionIndex) => (
+          <div key={sectionIndex} className="committee-section-wrapper">
+            <h2 className="section-heading">{section.sectionHeading}</h2>
+            <div className="card-grid">
+              {section.items.map((member, memberIndex) => {
+                const cardContent = (
+                  <div className="event-card">
+                    <img
+                      src={getImage(member.image)}
+                      alt={member.name}
+                      className="committee-img"
+                    />
+                    <h3 className="card-title">{member.name}</h3>
+                    <p className="event-meta">{member.role}</p>
+                    <p className="event-details">{member.description}</p>
+                  </div>
+                );
 
-            return member.instagram ? (
-              <a
-                key={index}
-                href={member.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="event-card-link"
-              >
-                {cardContent}
-              </a>
-            ) : (
-              <div key={index}>{cardContent}</div>
-            );
-          })}
-        </div>
+                return member.instagram ? (
+                  <a
+                    key={memberIndex}
+                    href={member.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="event-card-link"
+                  >
+                    {cardContent}
+                  </a>
+                ) : (
+                  <div key={memberIndex}>{cardContent}</div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </section>
     </>
   );

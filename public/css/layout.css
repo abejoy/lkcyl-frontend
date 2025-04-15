@@ -200,20 +200,6 @@ header .scrolldown a {
 /* hide toggle button */
 #nav-wrap > a.mobile-btn { display: none; }
 
-ul#nav {
-   min-height: 48px;
-   width: auto;
-
-   /* center align the menu */
-   text-align: center;
-}
-ul#nav li {
-   position: relative;
-   list-style: none;
-   height: 48px;
-   display: inline-block;
-}
-
 /* Links */
 ul#nav li a {
 

@@ -5,34 +5,7 @@
     "description": "Welcome to London Knanaya Catholic Association. LKCYL is a group consisting of KCYL members from from all of London region knanaya units. The pourpose of LKCYL is to unite all Knanaya Catholics who are living in the London region, so that we can create a common platform for promoting family unity, educational activities, and become an institution to meet the social and welfare needs irrespective of place, race and community",
     "extra": "have limited spaces and will be accepting people on a first come first service basis so please register for the camp providing your details below.",
     "soldout": "We are currently fully booked and have stoped registration, if there are any cancelations we will reopen the registration please keep an eye on this page.",
-    "image": "profilepic.jpg",
-    "bio": "I am just a really techy person who enjoys building stuff",
     "contactmessage": "Please fill in the form to register for the Football Tournament",
-    "email": "abrahamjoys98@gmail.com",
-    "contacts": [
-      {
-        "name": "Christie Jibi",
-        "role": "LKCYL President",
-        "number": ""
-      },
-      {
-        "name": "Give me details",
-        "role": "LKCYL Secretary",
-        "number": ""
-      },
-      {
-        "name": "Give me details",
-        "role": "LKCA President",
-        "number": ""
-      },
-      {
-        "name": "Jesso Chettai",
-        "role": "LKCA Secretary",
-        "number": ""
-      }
-    ],
-    "website": "http://www.abrahamjoys.com",
-    "resumedownload": "./CV.pdf",
     "social": [
       {
         "name": "facebook",
@@ -46,90 +19,26 @@
       }
     ]
   },
-  "resume": {
-    "skillmessage": "These are my Skills",
-    "education": [
-      {
-        "school": "University of Leicester",
-        "degree": "BSc Computer Science with Year in Industry",
-        "graduated": "September 2020",
-        "description": "Was Course Representative: Responsible for collecting and portraying feedback to university lectures, to help improve education process"
-      },
-      {
-        "school": "Herschel Grammar School, Slough",
-        "degree": "A level: Mathematics, Further Mathematics, Computing",
-        "graduated": "July 2016"
-      }
-    ],
-    "work": [
-      {
-        "company": "Sky",
-        "title": "Assioate Software Developer",
-        "years": "September 2020 - Present",
-        "description": "Working as a front end developer on SkyQ Tv apps"
-      },
-      {
-        "company": "Contemi Solutions AS",
-        "title": "Placement Developer",
-        "years": "August 2018 - August 2019",
-        "description": "Worked as a full stack developer on various Angular applications"
-      }
-    ],
-    "skills": [
-      {
-        "name": "Java",
-        "level": "90%"
-      },
-      {
-        "name": "Python",
-        "level": "90%"
-      },
-      {
-        "name": "React",
-        "level": "80%"
-      },
-      {
-        "name": "JavaScript, TypeScript, Angular",
-        "level": "80%"
-      },
-      {
-        "name": "HTML5, CSS",
-        "level": "80%"
-      },
-      {
-        "name": "Spring",
-        "level": "60%"
-      },
-      {
-        "name": "MySql, Docker, AWS EC2",
-        "level": "70%"
-      }
-    ]
-  },
-  "testimonials": {
-    "testimonials": [
- 
-      {
-        "name": "LKCYL 7-a-side Football Tournament",
-        "text": "A thrilling day of competitive football bringing together teams from across the UK.",
-        "date": "Saturday 19th July 2025",
-        "location": "The Arena, Hitchin Town Community Football Club, Norton Rd, Baldock, SG7 5AU"
-      },
-      {
-        "name": "⁠LKCYL Get-Together",
-        "text": "An evening of fun, food, and community celebration for all LKCYL members.",
-        "date": "August 23rd, 2025",
-        "location": " St Albans RC Church Hall, Langdale Gardens, Hornchurch, RM12 5JX"
-      },
-      {
-        "name": "⁠LKCYL Annual Camp 2025",
-        "text": "A weekend retreat filled with faith, fellowship, and outdoor adventure.",
-        "date": "September 26th to 28th 2025",
-        "location": "Moat Mount Outdoors Centre, Barnet Wy, London, NW7 5AL"
-      }
-      
-    ]
-  },
+  "upcomingEvents": [
+    {
+      "name": "LKCYL 7-a-side Football Tournament",
+      "text": "A thrilling day of competitive football bringing together teams from across the UK.",
+      "date": "Saturday 19th July 2025",
+      "location": "The Arena, Hitchin Town Community Football Club, Norton Rd, Baldock, SG7 5AU"
+    },
+    {
+      "name": "⁠LKCYL Get-Together",
+      "text": "An evening of fun, food, and community celebration for all LKCYL members.",
+      "date": "August 23rd, 2025",
+      "location": " St Albans RC Church Hall, Langdale Gardens, Hornchurch, RM12 5JX"
+    },
+    {
+      "name": "⁠LKCYL Annual Camp 2025",
+      "text": "A weekend retreat filled with faith, fellowship, and outdoor adventure.",
+      "date": "September 26th to 28th 2025",
+      "location": "Moat Mount Outdoors Centre, Barnet Wy, London, NW7 5AL"
+    }
+  ],
   "ukkcaunits": [
     "Basildon and southend Unit",
     "Glasgow Unit",
@@ -182,5 +91,115 @@
     "Edinburgh Unit",
     "North West London Unit",
     "Ipswich Unit"
+  ],
+  "committeeMembers": [
+    {
+      "sectionHeading": "LKCYL",
+      "items": [
+        {
+          "name": "Christie Jibi Anakuthickal",
+          "role": "President",
+          "image": "christie.jpg",
+          "description": "East London Unit",
+          "instagram": "https://www.instagram.com/christie_johns_?igsh=MXZmaTRxamsyNWliOA=="
+        },
+        {
+          "name": "Jake Joseph",
+          "role": "Secretary",
+          "image": "jake.jpg",
+          "description": "Harlow Unit",
+          "instagram": "https://www.instagram.com/_jake_joseph?igsh=NHl4MzI5ZmxjMTln"
+        },
+        {
+          "name": "Jeff Thomas",
+          "role": "Treasurer",
+          "image": "jeff.jpg",
+          "description": "North West London Unit",
+          "instagram": "https://www.instagram.com/jeffthomasss?igsh=c2djc2Q1NGVlaml4"
+        },
+        {
+          "name": "Leon Lalu",
+          "role": "Vice President",
+          "image": "leon.jpg",
+          "description": "Bassildon Unit",
+          "instagram": "https://www.instagram.com/leon.lalu?igsh=MTZvMGNwb3JuMXNqYg=="
+        },
+        {
+          "name": "Coming Soon",
+          "role": "Joint Secretary",
+          "image": "maria.jpg",
+          "description": "Coming Soon",
+          "instagram": ""
+        },
+        {
+          "name": "Coming Soon",
+          "role": "Joint Treasurer",
+          "image": "jaison.jpg",
+          "description": "Coming Soon",
+          "instagram": ""
+        },
+        {
+          "name": "Abraham Joys",
+          "role": "Techinical Team",
+          "image": "abe.jpg",
+          "description": "North West London Unit",
+          "instagram": "https://www.instagram.com/abe.jesvin/"
+        },
+        {
+          "name": "Toms Xavi",
+          "role": "Techinical Team",
+          "image": "toms.jpeg",
+          "description": "Harlow Unit",
+          "instagram": "https://www.linkedin.com/in/toms-xavi-99693b2a3/"
+        }
+      ]
+    },
+    {
+      "sectionHeading": "LKCA",
+      "items": [
+        {
+          "name": "jibi",
+          "role": "President",
+          "image": "jibi.jpg",
+          "description": "East London Unit",
+          "instagram": "https://www.instagram.com/christie_johns_?igsh=MXZmaTRxamsyNWliOA=="
+        },
+        {
+          "name": "Jesso",
+          "role": "Secretary",
+          "image": "jesso.jpg",
+          "description": "Harlow Unit",
+          "instagram": "https://www.instagram.com/_jake_joseph?igsh=NHl4MzI5ZmxjMTln"
+        },
+        {
+          "name": "Thomas",
+          "role": "Treasurer",
+          "image": "thomas.jpg",
+          "description": "Manages our finances with transparency and care.",
+          "instagram": "https://www.instagram.com/jeffthomasss?igsh=c2djc2Q1NGVlaml4"
+        },
+        {
+          "name": "Jimmy",
+          "role": "Vice President",
+          "image": "jimmy.png",
+          "description": "Stevenage Unit",
+          "instagram": "https://www.instagram.com/leon.lalu?igsh=MTZvMGNwb3JuMXNqYg=="
+        },
+        {
+          "name": "Albin",
+          "role": "Joint Secretary",
+          "image": "albin.jpg",
+          "description": "Coming Soon",
+          "instagram": ""
+        },
+        {
+          "name": "James",
+          "role": "Joint Treasurer",
+          "image": "james.jpg",
+          "description": "North West London Unit",
+          "instagram": ""
+        }
+      ]
+    }
   ]
 }
