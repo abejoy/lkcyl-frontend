@@ -4,6 +4,7 @@ import HashLoader from 'react-spinners/HashLoader';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import AWS from 'aws-sdk';
 import { getTeamByTeamName, updatePlayers } from '../data-service/pi-data-service';
+import { FaDownload, FaUpload } from 'react-icons/fa'; // Import icons
 import './TeamData.css'; // Make sure this path is correct
 
 AWS.config.update({
@@ -13,15 +14,36 @@ AWS.config.update({
 });
 const s3 = new AWS.S3();
 
+const Bucket = 'prodlkcyllkcylstackemailbucket';
+const bucketPath = 'verificationPDFs'; // Path in the bucket where the PDF is stored
+
 const TeamData = (props) => {
   const [rowDataFromBe, setRowDataFromBe] = useState({});
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pdfUrl, setPdfUrl] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null); // File to upload
+  const [uploading, setUploading] = useState(false); // Upload state
+
   const fetchCalled = useRef(false); // Ref to track if fetchData has been called
 
   const row = props.row;
   const teamName = row[0];
+
+  const getPdf = async (teamName) => {
+    const params = {
+      Bucket,
+      Key: `${bucketPath}/${teamName}.pdf`,
+      Expires: 250, // URL expiration time in seconds
+    };
+
+    try {
+      const signedUrl = s3.getSignedUrl('getObject', params);
+      setPdfUrl(signedUrl);
+    } catch (error) {
+      console.error('Error fetching PDF URL:', error);
+    }
+  };
 
   const fetchData = useCallback(async () => {
     if (fetchCalled.current) return; // Prevent double calls
@@ -35,19 +57,7 @@ const TeamData = (props) => {
     }));
     setPlayers(newPlayers);
 
-    //getpdf
-    const params = {
-      Bucket: 'prodlkcyllkcylstackemailbucket',
-      Key: `verificationPDFs/${teamName}.pdf`, // Path to your PDF file in the bucket
-      Expires: 250, // URL expiration time in seconds
-    };
-
-    try {
-      const signedUrl = s3.getSignedUrl('getObject', params);
-      setPdfUrl(signedUrl);
-    } catch (error) {
-      console.error('Error fetching PDF URL:', error);
-    }
+    getPdf(teamName);
   }, [teamName]);
 
   useEffect(() => {
@@ -59,6 +69,39 @@ const TeamData = (props) => {
     margin: '0 auto',
     borderColor: 'red',
     background: '#685dc3',
+  };
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const uploadPdf = async () => {
+    if (!selectedFile) {
+      alert('Please select a file to upload.');
+      return;
+    }
+
+    setUploading(true);
+
+    const params = {
+      Bucket,
+      Key: `${bucketPath}/${teamName}.pdf`,
+      Body: selectedFile,
+      ContentType: selectedFile.type,
+    };
+
+    try {
+      await s3.upload(params).promise();
+      alert('File uploaded successfully!');
+      // Optionally, update the pdfUrl to the uploaded file's URL
+
+      getPdf(teamName);
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      alert('Failed to upload file.');
+    } finally {
+      setUploading(false);
+    }
   };
 
   const showToast = (title, message, type) => {
@@ -119,7 +162,7 @@ const TeamData = (props) => {
     <div className="team-data-container">
       {/* Team Details Section */}
       <div className="team-details">
-        <h3>{`Team: ${teamName}`}</h3>
+        <h3 className="stats-heading">{`Team: ${teamName}`}</h3>
         <p>
           <strong>Unit:</strong> {rowDataFromBe.kcylUnit}
         </p>
@@ -139,7 +182,7 @@ const TeamData = (props) => {
 
       {/* Captain Details Section */}
       <div className="contact-details">
-        <h3>Captain Details</h3>
+        <h3 className="stats-heading">Captain Details</h3>
         <p>
           <strong>Name:</strong> {rowDataFromBe.captainName}
         </p>
@@ -153,7 +196,7 @@ const TeamData = (props) => {
 
       {/* Manager Details Section */}
       <div className="contact-details">
-        <h3>Manager Details</h3>
+        <h3 className="stats-heading">Manager Details</h3>
         <p>
           <strong>Name:</strong> {rowDataFromBe.managerName}
         </p>
@@ -167,7 +210,7 @@ const TeamData = (props) => {
 
       {/* Director Details Section */}
       <div className="contact-details">
-        <h3>Director Details</h3>
+        <h3 className="stats-heading">Director Details</h3>
         <p>
           <strong>Name:</strong> {rowDataFromBe.directorName}
         </p>
@@ -181,7 +224,7 @@ const TeamData = (props) => {
 
       {/* Players Section */}
       <div className="players-section">
-        <h3>Players</h3>
+        <h3 className="stats-heading">Players</h3>
         {players.map((player, index) => (
           <div key={index} id={player.id} onClick={verifyPlayer} className="checkbox-wrapper-47">
             <input type="checkbox" name="cb" id="cb-47" onChange={verifyPlayer} checked={player.verified} />
@@ -195,10 +238,22 @@ const TeamData = (props) => {
 
       <div className="pdf-section">
         <div>
-          <h4>Verification Form</h4>
-          <a href={pdfUrl} download className="download-link">
+          <h3 className="stats-heading">Verification Form</h3>
+
+          {/* Download Link with Icon */}
+          <a href={pdfUrl} download={`${teamName} Verification Form.pdf`} className="download-link">
+            <FaDownload style={{ marginRight: '8px' }} />
             Download Verification Form
           </a>
+
+          {/* Upload Section */}
+          <div className="upload-section">
+            <input type="file" accept="application/pdf" onChange={handleFileChange} />
+            <button onClick={uploadPdf} disabled={uploading} className="upload-button">
+              <FaUpload style={{ marginRight: '8px' }} />
+              {uploading ? 'Uploading...' : 'Upload PDF'}
+            </button>
+          </div>
 
           {pdfUrl ? (
             <div className="pdf-viewer-container">
