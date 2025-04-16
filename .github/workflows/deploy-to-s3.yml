@@ -49,5 +49,5 @@ jobs:
       - name: Sync emailData folder to S3
         run: |
           aws s3 sync ./emailData s3://prodlkcyllkcylstackemailbucket \
-          --exclude "verificationPDFs" \
+          --exclude "verificationPDFs/*" \
           --delete
