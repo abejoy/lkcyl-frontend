@@ -1,51 +1,44 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/logo.png";
-import "./BarNav.css";
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
+import './BarNav.css';
 
 const barNavNames = [
-  { name: "Home", path: "/" },
-  { name: "Gallery", path: "/gallery" },
-  { name: 'Meet the Committee', path: '/committee'},
-  { name: "Football Registration", path: "/football" },
+  { name: 'Home', path: '/' },
+  { name: 'Gallery', path: '/gallery' },
+  { name: 'Meet the Committee', path: '/committee' },
+  { name: 'Football Registration', path: '/football' },
   // { name: "Admin", path: "/admindash" },
 ];
-
-
 
 const BarNav = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null); // Reference to the menu container
 
-
-
   const getLinkStyle = (path) => {
-    return location.pathname === path
-      ? { color: "#FFA447", fontWeight: "bold" }
-      : { color: "#ffffff"};
+    return location.pathname === path ? { color: '#FFA447', fontWeight: 'bold' } : { color: '#ffffff' };
   };
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-    // Close the menu when clicking outside
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (menuRef.current && !menuRef.current.contains(event.target)) {
-          setIsMenuOpen(false); // Close the menu
-        }
-      };
-  
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("touchstart", handleClickOutside); // For touch events
+  // Close the menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false); // Close the menu
+      }
+    };
 
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-        document.addEventListener("touchstart", handleClickOutside); // For touch events
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside); // For touch events
 
-      };
-    }, []);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside); // For touch events
+    };
+  }, []);
 
   return (
     <nav id="nav-wrap" ref={menuRef}>
@@ -59,14 +52,10 @@ const BarNav = () => {
         </button>
       </div>
 
-      <ul id="nav" className={`nav ${isMenuOpen ? "open" : "close"}`}>
+      <ul id="nav" className={`nav ${isMenuOpen ? 'open' : 'close'}`}>
         {barNavNames.map((item, index) => (
-          <Link key={index} to={item.path} >
-            <li style={getLinkStyle(item.path)}>
-            
-              {item.name}
-            
-            </li>
+          <Link key={index} to={item.path}>
+            <li style={getLinkStyle(item.path)}>{item.name}</li>
           </Link>
         ))}
       </ul>

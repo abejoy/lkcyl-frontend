@@ -1,29 +1,24 @@
-import React from "react";
-import "./MeetTheCommittee.css";
+import React from 'react';
+import './MeetTheCommittee.css';
 import BarNav from './BarNav';
 
 const getImage = (imagePath) => {
   try {
-    const images = require.context(
-      "../assets/committee",
-      false,
-      /\.(jpg|jpeg|png|gif)$/i
-    );
+    const images = require.context('../assets/committee', false, /\.(jpg|jpeg|png|gif)$/i);
     return images(`./${imagePath}`);
   } catch (error) {
     console.error(`Error loading image: ${imagePath}`, error);
-    return "https://via.placeholder.com/100";
+    return 'https://via.placeholder.com/100';
   }
 };
 
 const MeetTheCommittee = (props) => {
-
-  const {data} = props;
-  if (!data || data?.length === 0 ) {
+  const { data } = props;
+  if (!data || data?.length === 0) {
     return null;
   }
 
-  const committeeSections = data
+  const committeeSections = data;
 
   return (
     <>
@@ -36,11 +31,7 @@ const MeetTheCommittee = (props) => {
               {section.items.map((member, memberIndex) => {
                 const cardContent = (
                   <div className="event-card">
-                    <img
-                      src={getImage(member.image)}
-                      alt={member.name}
-                      className="committee-img"
-                    />
+                    <img src={getImage(member.image)} alt={member.name} className="committee-img" />
                     <h3 className="card-title">{member.name}</h3>
                     <p className="event-meta">{member.role}</p>
                     <p className="event-details">{member.description}</p>
@@ -48,13 +39,7 @@ const MeetTheCommittee = (props) => {
                 );
 
                 return member.instagram ? (
-                  <a
-                    key={memberIndex}
-                    href={member.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="event-card-link"
-                  >
+                  <a key={memberIndex} href={member.instagram} target="_blank" rel="noopener noreferrer" className="event-card-link">
                     {cardContent}
                   </a>
                 ) : (

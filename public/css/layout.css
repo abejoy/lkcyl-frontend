@@ -66,10 +66,6 @@ header .banner {
    margin-left: 35rem;
 }
 
-.table-row{
-   cursor: pointer;
-}
-
 @media (max-width: 767px) {
    header .banner {
       display: inline-block;

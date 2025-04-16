@@ -15,7 +15,6 @@
   text-align: center;
 }
 
-
 .section-heading {
   font-size: 3rem;
   font-weight: bold;
@@ -55,7 +54,7 @@
 }
 
 .event-card-link:hover .event-card {
-  border-color: #FFA447;
+  border-color: #ffa447;
   transform: scale(1.03);
 }
 
@@ -73,7 +72,7 @@
 }
 
 .event-card-link:hover .committee-img {
-  border-color: #FFA447;
+  border-color: #ffa447;
 }
 
 .card-title {
@@ -101,5 +100,5 @@
 .event-card-link:hover .card-title,
 .event-card-link:hover .event-meta,
 .event-card-link:hover .event-details {
-  color: #FFA447;
+  color: #ffa447;
 }

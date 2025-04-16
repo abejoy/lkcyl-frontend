@@ -73,7 +73,7 @@ ul#nav li {
     display: block;
     margin-left: auto;
   }
-  .nav-logo{
+  .nav-logo {
     width: 100%;
   }
 
@@ -83,10 +83,10 @@ ul#nav li {
 
   ul#nav {
     width: auto;
- 
+
     /* center align the menu */
     text-align: center;
- }
+  }
 
   .nav {
     display: none;
@@ -100,7 +100,10 @@ ul#nav li {
     z-index: 1000;
   }
 
-  #nav-wrap ul#nav { width: 90%; float: none; }
+  #nav-wrap ul#nav {
+    width: 90%;
+    float: none;
+  }
 
   .nav.open {
     display: flex;

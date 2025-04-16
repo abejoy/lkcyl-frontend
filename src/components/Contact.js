@@ -1,25 +1,22 @@
-import React, { useEffect, useState } from "react";
-import {
-  submitForm,
-  getAllAvailableColors,
-  getTableData,
-} from "../data-service/pi-data-service";
-import HashLoader from "react-spinners/HashLoader";
-import Modal from "react-modal";
-import MyTable from "./MyTable.js";
-import { Store } from "react-notifications-component";
-import resumeData from "../assets/resumeData.json";
-import BarNav from "./BarNav";
-import logo from "../assets/logo.png";
-import ample from "../assets/sponsers/ample.jpg";
-import cj from "../assets/sponsers/cj.jpg";
-import { tableHeading } from "./AdminDash.js";
+import React, { useEffect, useState } from 'react';
+import { submitForm, getAllAvailableColors, getTableData } from '../data-service/pi-data-service';
+import HashLoader from 'react-spinners/HashLoader';
+import Modal from 'react-modal';
+import MyTable from './MyTable.js';
+import { Store } from 'react-notifications-component';
+import resumeData from '../assets/resumeData.json';
+import BarNav from './BarNav';
+import logo from '../assets/logo.png';
+import ample from '../assets/sponsers/ample.jpg';
+import cj from '../assets/sponsers/cj.jpg';
+import { tableHeading } from './AdminDash.js';
+import { secondaryModalStyles } from './TableRow.js';
 
 const Contact = (props) => {
   const [formData, setFormData] = useState({ players: [] });
   const [players, setPlayers] = useState({});
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const [loading, setloading] = useState(false);
   const [modalStatus, setModalStatus] = useState(false);
   const [tabledata, setTableData] = useState({});
@@ -48,13 +45,13 @@ const Contact = (props) => {
       players.push({
         required: i < 7,
         id: `player${i + 1}`,
-        placeholder: `Player ${i + 1} ${i < 7 ? "" : "(optional sub)"}`,
+        placeholder: `Player ${i + 1} ${i < 7 ? '' : '(optional sub)'}`,
       });
     }
     return players;
   };
 
-  const doChecks = () => "";
+  const doChecks = () => '';
 
   const sortData = () => {
     const updatedFormData = { ...formData };
@@ -63,7 +60,7 @@ const Contact = (props) => {
   };
 
   const handleChange = (e) => {
-    if (e.target.id === "teamName" && e.target.value === "admindash") openModal();
+    if (e.target.id === 'teamName' && e.target.value === 'admindash') openModal();
     formData[e.target.id] = e.target.value;
     setFormData({ ...formData });
   };
@@ -77,10 +74,10 @@ const Contact = (props) => {
       title,
       message,
       type,
-      insert: "top",
-      container: "top-right",
-      animationIn: ["animate__animated", "animate__fadeInRight"],
-      animationOut: ["animate__animated", "animate__fadeOutRight"],
+      insert: 'top',
+      container: 'top-right',
+      animationIn: ['animate__animated', 'animate__fadeInRight'],
+      animationOut: ['animate__animated', 'animate__fadeOutRight'],
       dismiss: { duration: 5000, onScreen: true },
     });
   };
@@ -92,15 +89,15 @@ const Contact = (props) => {
   const getUnits = () => resumeData.ukkcaunits.sort();
 
   const override = {
-    display: "block",
-    margin: "0 auto",
-    background: "#00000000",
+    display: 'block',
+    margin: '0 auto',
+    background: '#00000000',
   };
 
   const buttonClicked = async (e) => {
     e.preventDefault();
-    setErrorMessage("");
-    setSuccessMessage("");
+    setErrorMessage('');
+    setSuccessMessage('');
     const dataToSend = sortData();
     const frontEndErrorMessage = doChecks();
 
@@ -109,7 +106,7 @@ const Contact = (props) => {
       try {
         const msg = await submitForm(dataToSend);
         if (msg.teamName === dataToSend.teamName) {
-          setSuccessMessage("Thank you for registering please check your email");
+          setSuccessMessage('Thank you for registering please check your email');
         } else {
           setErrorMessage(msg.data);
         }
@@ -122,15 +119,14 @@ const Contact = (props) => {
     }
   };
 
-
-  const showEmailRequirments = () => showToast("Email", "Please ensure that all characters in the email are lowercase", "success");
-  const showManagerBubble = () => showToast("Manager", "Manager Should be either a Unit Director or a responsible accompanying adult from the unit", "success");
-  const showDirectorBubble = () => showToast("Director", "Director Should be a Unit Director that represents the KCYL members of the team", "success");
-  const conbinedUnitsSelected = () => showToast("Combined Units", "If you are combining units please add the units you are combining in Additional Message or comments", "success");
-  const handleColorFocus = () => showToast("Team Colour", "All players are required to wear the colour of the team selected", "success");
+  const showEmailRequirments = () => showToast('Email', 'Please ensure that all characters in the email are lowercase', 'success');
+  const showManagerBubble = () => showToast('Manager', 'Manager Should be either a Unit Director or a responsible accompanying adult from the unit', 'success');
+  const showDirectorBubble = () => showToast('Director', 'Director Should be a Unit Director that represents the KCYL members of the team', 'success');
+  const conbinedUnitsSelected = () => showToast('Combined Units', 'If you are combining units please add the units you are combining in Additional Message or comments', 'success');
+  const handleColorFocus = () => showToast('Team Colour', 'All players are required to wear the colour of the team selected', 'success');
 
   // const contacts = props.data?.contacts || [];
-  const message = props.data?.contactmessage || "";
+  const message = props.data?.contactmessage || '';
 
   return (
     <>
@@ -138,34 +134,44 @@ const Contact = (props) => {
       <section id="contact">
         <div>
           <div>
-            <h1><span>Football Tournament Registration</span></h1>
+            <h1>
+              <span>Football Tournament Registration</span>
+            </h1>
             <p className="lead">{message}</p>
           </div>
         </div>
 
-        <div style={{paddingRight: '5%', paddingLeft: '5%'}}>
-          <div >
-          <form
-  onSubmit={buttonClicked}
-  id="contactForm"
-  name="contactForm"
-  onKeyDown={(e) => {
-    if (e.key === "Enter") {
-      e.preventDefault(); // Prevent form submission on "Enter"
-    }
-  }}
->
+        <div style={{ paddingRight: '5%', paddingLeft: '5%' }}>
+          <div>
+            <form
+              onSubmit={buttonClicked}
+              id="contactForm"
+              name="contactForm"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault(); // Prevent form submission on "Enter"
+                }
+              }}
+            >
               <fieldset>
                 <div className="form-section">
                   <h4>Team Details</h4>
                   <input required type="text" placeholder="Team Name" id="teamName" onChange={handleChange} />
                   <select required id="unit" defaultValue="" onChange={handleChange} onFocus={conbinedUnitsSelected}>
-                    <option disabled value="">Please Select your Unit</option>
+                    <option disabled value="">
+                      Please Select your Unit
+                    </option>
                     <option value="combined">Combining Unit</option>
-                    {getUnits().map((unit, i) => <option key={i} value={unit}>{unit}</option>)}
+                    {getUnits().map((unit, i) => (
+                      <option key={i} value={unit}>
+                        {unit}
+                      </option>
+                    ))}
                   </select>
                   <select required id="tournamentGender" defaultValue="" onChange={handleChange}>
-                    <option disabled value="">Please Select Tournament</option>
+                    <option disabled value="">
+                      Please Select Tournament
+                    </option>
                     <option value="Female">Female Tournament</option>
                     <option value="Male">Male Tournament</option>
                   </select>
@@ -174,44 +180,63 @@ const Contact = (props) => {
                 <div className="form-section">
                   <h4>Captain's Contact</h4>
                   <input required type="text" placeholder="Captain Full Name" id="captainName" onChange={handleChange} />
-                  <input required type="text" placeholder="Captain Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="captainEmail" onChange={handleChange} onFocus={showEmailRequirments} />
+                  <input
+                    required
+                    type="text"
+                    placeholder="Captain Email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    id="captainEmail"
+                    onChange={handleChange}
+                    onFocus={showEmailRequirments}
+                  />
                   <input required type="tel" placeholder="Captain Phone" pattern="[0-9]{11}" id="captainPhone" onChange={handleChange} />
                 </div>
 
                 <div className="form-section">
                   <h4>Manager's Contact</h4>
                   <input required type="text" placeholder="Manager Full Name" id="managerName" onChange={handleChange} onFocus={showManagerBubble} />
-                  <input required type="text" placeholder="Manager Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="managerEmail" onChange={handleChange} onFocus={showEmailRequirments} />
+                  <input
+                    required
+                    type="text"
+                    placeholder="Manager Email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    id="managerEmail"
+                    onChange={handleChange}
+                    onFocus={showEmailRequirments}
+                  />
                   <input required type="tel" placeholder="Manager Phone" pattern="[0-9]{11}" id="managerPhone" onChange={handleChange} />
                 </div>
 
                 <div className="form-section">
                   <h4>Director's Contact</h4>
-                  <input required type="text" placeholder="Director Full Name" id="directorName" onChange={handleChange} onFocus={showDirectorBubble}/>
-                  <input required type="text" placeholder="Director Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="directorEmail" onChange={handleChange} onFocus={showEmailRequirments} />
+                  <input required type="text" placeholder="Director Full Name" id="directorName" onChange={handleChange} onFocus={showDirectorBubble} />
+                  <input
+                    required
+                    type="text"
+                    placeholder="Director Email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    id="directorEmail"
+                    onChange={handleChange}
+                    onFocus={showEmailRequirments}
+                  />
                   <input required type="tel" placeholder="Director Phone" pattern="[0-9]{11}" id="directorPhone" onChange={handleChange} />
                 </div>
 
                 <div className="form-section">
                   <h4>Team Colour and Players</h4>
                   <select required id="selectedColor" defaultValue="" onChange={handleChange} onFocus={handleColorFocus}>
-                    <option disabled value="">Please Select Team Colour</option>
+                    <option disabled value="">
+                      Please Select Team Colour
+                    </option>
                     {availableColors.map((color, index) => (
                       <option key={index} value={color.colorName} disabled={!color.available}>
-                        {color.colorName} {!color.available ? "(Unavailable)" : ""}
+                        {color.colorName} {!color.available ? '(Unavailable)' : ''}
                       </option>
                     ))}
                   </select>
 
                   {getEmptyPlayers().map((player, i) => (
-                    <input
-                      key={i}
-                      required={player.required}
-                      type="text"
-                      placeholder={player.placeholder}
-                      id={player.id}
-                      onChange={handleChangeInPlayers}
-                    />
+                    <input key={i} required={player.required} type="text" placeholder={player.placeholder} id={player.id} onChange={handleChangeInPlayers} />
                   ))}
                 </div>
 
@@ -221,33 +246,51 @@ const Contact = (props) => {
                 </div>
 
                 <div className="submitButton">
-                  <button className="submit" style={{cursor: loading ? 'not-allowed' : 'pointer'}} disabled={loading}>
-                    {loading ? 'Registering Team' :'Submit'} <HashLoader color="#ffffff" cssOverride={override} loading={loading} />
+                  <button className="submit" style={{ cursor: loading ? 'not-allowed' : 'pointer' }} disabled={loading}>
+                    {loading ? 'Registering Team' : 'Submit'} <HashLoader color="#ffffff" cssOverride={override} loading={loading} />
                   </button>
                 </div>
               </fieldset>
             </form>
 
             {errorMessage && <div id="message-warning">{errorMessage}</div>}
-            {successMessage && <div id="message-success"><i className="fa fa-check"></i>{successMessage}</div>}
+            {successMessage && (
+              <div id="message-success">
+                <i className="fa fa-check"></i>
+                {successMessage}
+              </div>
+            )}
           </div>
-              <h1>Our Sponsors:</h1>
-              <a href="https://www.lkcyl.com/" style={{padding: '1%'}} target="_blank" rel="noopener noreferrer">
-                <img src={logo} alt="LKCYL Logo" style={{width: '20%'}}/>
-              </a>
+          <h1>Our Sponsors:</h1>
+          <a href="https://www.lkcyl.com/" style={{ padding: '1%' }} target="_blank" rel="noopener noreferrer">
+            <img src={logo} alt="LKCYL Logo" style={{ width: '20%' }} />
+          </a>
 
-              <a href="https://amplemortgages.co.uk/" style={{padding: '1%'}} target="_blank" rel="noopener noreferrer">
-              <img src={ample} alt="LKCYL Logo" style={{width: '33%'}}/>
-              </a>
+          <a href="https://amplemortgages.co.uk/" style={{ padding: '1%' }} target="_blank" rel="noopener noreferrer">
+            <img src={ample} alt="LKCYL Logo" style={{ width: '33%' }} />
+          </a>
 
-              <a href="https://www.instagram.com/christie_johns_/" style={{padding: '1%'}} target="_blank" rel="noopener noreferrer">
-              <img src={cj} alt="LKCYL Logo"style={{width: '33%'}}/>
-              </a>
+          <a href="https://www.instagram.com/christie_johns_/" style={{ padding: '1%' }} target="_blank" rel="noopener noreferrer">
+            <img src={cj} alt="LKCYL Logo" style={{ width: '33%' }} />
+          </a>
         </div>
 
-        <Modal isOpen={modalStatus} onRequestClose={closeModal} contentLabel="Admin Modal">
-          <button onClick={closeModal}>close</button>
-          <div>Welcome to top secret page, don’t share this with anyone.</div>
+        <Modal style={secondaryModalStyles} isOpen={modalStatus} onRequestClose={closeModal} contentLabel="Admin Modal">
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <button style={{ marginTop: '5rem' }} onClick={closeModal}>
+              Close
+            </button>
+            <h4 style={{ color: 'white' }}>Welcome to top secret page.</h4>
+            <h4 style={{ color: 'white' }}>These are all the teams.</h4>
+          </div>
+
           <MyTable data={tabledata} refreshData={openModal} />
         </Modal>
       </section>

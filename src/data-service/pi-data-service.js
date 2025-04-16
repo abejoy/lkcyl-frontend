@@ -1,13 +1,13 @@
 // import axios from "axios";
-import { gql } from "@apollo/client";
-import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
+import { gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
     uri: process.env.REACT_APP_GRAPH_URI_ENDPOINT, // Replace with your actual GraphQL endpoint
     headers: {
-      "x-api-key": process.env.REACT_APP_X_API_KEY, // Replace with your actual API key if needed
+      'x-api-key': process.env.REACT_APP_X_API_KEY, // Replace with your actual API key if needed
     },
   }),
 });
@@ -43,9 +43,9 @@ const ADD_TEAM_MUTATION = gql`
       additionalMessage: $contactMessage
       captainPhone: $captainPhone
       managerPhone: $managerPhone
-      directorName: $directorName 
-      directorEmail: $directorEmail 
-      directorPhone: $directorPhone 
+      directorName: $directorName
+      directorEmail: $directorEmail
+      directorPhone: $directorPhone
     ) {
       teamName
       managerName
@@ -70,7 +70,7 @@ const ADD_TEAM_MUTATION = gql`
 `;
 
 export const submitForm = async (formdata) => {
-  const contactMessage = formdata.contactMessage || "";
+  const contactMessage = formdata.contactMessage || '';
   const {
     teamName,
     managerEmail,
@@ -140,8 +140,8 @@ export const updatePlayers = async (teamName, players) => {
     variables: { players, teamName },
   });
   if (errors && errors.length > 0) {
-    console.error("GraphQL Errors:", errors);
-    throw new Error("Errors returned from the server.");
+    console.error('GraphQL Errors:', errors);
+    throw new Error('Errors returned from the server.');
   }
   return data.updateTeamPlayers;
 };
@@ -174,11 +174,11 @@ const GET_ALL_TEAMS = gql`
 export const getAllTeams = async () => {
   const { errors, data } = await client.query({
     query: GET_ALL_TEAMS,
-    fetchPolicy: "network-only",
+    fetchPolicy: 'network-only',
   });
   if (errors && errors.length > 0) {
-    console.error("GraphQL Errors:", errors);
-    throw new Error("Errors returned from the server.");
+    console.error('GraphQL Errors:', errors);
+    throw new Error('Errors returned from the server.');
   }
   return data.getAllTeam;
 };
@@ -191,11 +191,11 @@ const GET_TABLE_DATA = gql`
 export const getTableData = async () => {
   const { errors, data } = await client.query({
     query: GET_TABLE_DATA,
-    fetchPolicy: "network-only",
+    fetchPolicy: 'network-only',
   });
   if (errors && errors.length > 0) {
-    console.error("GraphQL Errors:", errors);
-    throw new Error("Errors returned from the server.");
+    console.error('GraphQL Errors:', errors);
+    throw new Error('Errors returned from the server.');
   }
   return data.getTableData;
 };
@@ -227,12 +227,12 @@ const GET_TEAM_BY_TEAM_NAME_QUERY = gql`
 export const getTeamByTeamName = async (teamName) => {
   const { errors, data } = await client.query({
     query: GET_TEAM_BY_TEAM_NAME_QUERY,
-    fetchPolicy: "network-only",
+    fetchPolicy: 'network-only',
     variables: { teamName },
   });
   if (errors && errors.length > 0) {
-    console.error("GraphQL Errors:", errors);
-    throw new Error("Errors returned from the server.");
+    console.error('GraphQL Errors:', errors);
+    throw new Error('Errors returned from the server.');
   }
   return data.getTeam;
 };
@@ -257,11 +257,11 @@ const GET_AVAILABLE_COLORS_QUERY = gql`
 export const getAllAvailableColors = async () => {
   const { errors, data } = await client.query({
     query: GET_AVAILABLE_COLORS_QUERY,
-    fetchPolicy: "network-only",
+    fetchPolicy: 'network-only',
   });
   if (errors && errors.length > 0) {
-    console.error("GraphQL Errors:", errors);
-    throw new Error("Errors returned from the server.");
+    console.error('GraphQL Errors:', errors);
+    throw new Error('Errors returned from the server.');
   }
   return data.getAvailableColors;
 };
