@@ -1,0 +1,54 @@
+/* Default table styles for desktop */
+.table-container {
+    overflow-x: auto; /* Allow horizontal scrolling for small screens */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 2vw;
+  }
+  
+  thead {
+    background-color: #e0e0e0;
+  }
+  
+  /* Responsive styles for mobile */
+  @media (max-width: 760px) {
+    table {
+      border: 0;
+    }
+  
+    thead {
+      display: none; /* Hide table headers on mobile */
+    }
+  
+    tr {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  
+    td {
+        display: block;
+        text-align: center;
+        border: none;
+        position: relative;
+        font-size: 4vw;
+    }
+  
+    td::before {
+      content: attr(data-label); /* Use the `data-label` attribute for labels */
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }

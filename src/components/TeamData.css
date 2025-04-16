@@ -1,3 +1,7 @@
+.checkbox-wrapper-47 {
+text-align: center;
+}
+
 .checkbox-wrapper-47 input[type="checkbox"] {
   display: none;
   visibility: hidden;
@@ -10,6 +14,7 @@
   line-height: 2;
   cursor: pointer;
   display: inline-flex;
+  font-size: 2.1vw;
 }
 
 .checkbox-wrapper-47 label:before {
@@ -41,4 +46,121 @@
 .checkbox-wrapper-47 label,
 .checkbox-wrapper-47 label::before {
   transition: 0.25s all ease;
+}
+
+
+ /* General container styles */
+.team-data-container {
+  width: 90%;;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Section styles */
+.team-details, .contact-details, .players-section, .pdf-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f93a;
+  text-align: center;
+  
+}
+
+p {
+  text-align: center ;
+  font-size: 2.1vw;
+}
+p strong {
+  text-align: center ;
+  font-size: 2.1vw;
+}
+
+.pdf-viewer-container {
+  position: relative; /* Ensure proper positioning of child elements */
+  width: 100%; /* Adjust width as needed */
+  max-width: 800px; /* Set a maximum width for the viewer */
+  margin: 0 auto; /* Center the viewer horizontally */
+  overflow: hidden; /* Prevent content from overflowing */
+  background-color: #f9f9f9; /* Optional: Add a background color */
+  border: 1px solid #ddd; /* Optional: Add a border */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+
+
+
+h3 {
+  text-align: center;
+  margin-bottom: 1.5rem!important;
+  font-size: 3.5vw!important;
+  color: #444;
+}
+
+/* Player item styles */
+.player-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.player-item label {
+  margin-left: 0.5rem;
+}
+
+/* Submit button styles */
+.submit-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 3vw;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 8vw;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .team-data-container {
+    padding: 0.5rem;
+    width: 98%;;
+  }
+
+  h3 {
+    font-size: 5.5vw!important;
+  }
+
+  .submit-button {
+    width: 100%;
+    text-align: center;
+  }
+  p {
+    text-align: center ;
+    font-size: 3vw;
+  }
+  p strong {
+    text-align: center ;
+    font-size: 3vw;
+  }
+
+
+  .player-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkbox-wrapper-47 label {
+    margin-left: 0;
+    margin-top: 0.25rem;
+    font-size: 3.5vw;
+  }
 }

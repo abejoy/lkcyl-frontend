@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Gallery from "./components/Gallery";
 import FootballStats from "./components/FootballStats";
 import MeetTheCommittee from './components/MeetTheCommittee';
+import AdminDash from "./components/AdminDash";
 
 
 
@@ -59,7 +60,14 @@ const App = () => {
             <MeetTheCommittee data={resumeData.committeeMembers}/>
             <Footer data={resumeData.main} />
           </div>
-        } />
+          } />
+          {/* <Route path="/admindash" element={
+          <div className="App">
+            <ReactNotifications />
+            <AdminDash/>
+            <Footer data={resumeData.main} />
+          </div>
+          } /> */}
       </Routes>
     </Router>
   );

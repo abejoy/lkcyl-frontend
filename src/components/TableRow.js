@@ -6,8 +6,8 @@ import TeamData from './TeamData';
 
 const secondaryModalStyles = {
     content: {
-      width: '75%',
-      height: '50%',
+      width: '99%',
+      height: '90%',
       top: '50%',
       left: '50%',
       right: 'auto',
@@ -66,9 +66,11 @@ const TableRow = props => {
             style={secondaryModalStyles}
             contentLabel="Example Modal"
           >
-                <button onClick={closeModal}>Close</button>
-                <div style={styles.centerDivTitle}>Team {row[0]}</div>
-                <TeamData row={row} closeModal={closeModal} />
+            <div style={{textAlign: 'center'}}>
+              <button onClick={closeModal}>Close</button>
+            </div>
+                
+            <TeamData row={row} closeModal={closeModal} />
 
           </Modal>
         )}

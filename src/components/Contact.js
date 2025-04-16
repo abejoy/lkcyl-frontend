@@ -13,9 +13,9 @@ import BarNav from "./BarNav";
 import logo from "../assets/logo.png";
 import ample from "../assets/sponsers/ample.jpg";
 import cj from "../assets/sponsers/cj.jpg";
+import { tableHeading } from "./AdminDash.js";
 
 const Contact = (props) => {
-  const heading = ["Team Name", "Unit", "Colour", "Verified"];
   const [formData, setFormData] = useState({ players: [] });
   const [players, setPlayers] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
@@ -36,7 +36,7 @@ const Contact = (props) => {
 
   const openModal = async () => {
     const body = await getTableData();
-    setTableData({ heading, body });
+    setTableData({ heading: tableHeading, body });
     setModalStatus(true);
   };
 

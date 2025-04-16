@@ -8,6 +8,7 @@ const barNavNames = [
   { name: "Gallery", path: "/gallery" },
   { name: 'Meet the Committee', path: '/committee'},
   { name: "Football Registration", path: "/football" },
+  // { name: "Admin", path: "/admindash" },
 ];
 
 

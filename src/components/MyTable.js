@@ -1,68 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TableRow from './TableRow';
+import './MyTable.css'; // Import the CSS file for responsive styles
+
 
 export const styles = {
-    table: {
-      width: '100%',
-      borderCollapse: 'collapse',
-    },
-    th: {
-      background: '#e0e0e0',
-      fontWeight: 'bold',
-      padding: '8px',
-      textAlign: 'left',
-    },
+
     oddRow: {
       background: '#f2f2f2',
     },
     evenRow: {
       background: '#fff',
     },
-    td: {
-      padding: '8px',
-      textAlign: 'left',
-    },
     tableRowFocus: {
         background: '#E9D4D4',
     },
-    centerDiv: {
-        textAlign: 'center'
-    },
-    centerDivTitle: {
-        textAlign: 'center',
-        fontFamily: 'opensans-bold',
-        fontSize: '216%'
-    },
-    sectionDivs: {
-        padding: '5%'
-    },
-    buttonAbsolute: {
-        position: 'absolute'
-    }
 };
 
-const MyTable = props =>  {
+const MyTable = (props) =>  {
+  const [heading, setHeading] = useState([]);
+  const [body, setBody] = useState([]);
 
-      if(props.data){
-        var heading = props.data.heading;
-        var body = props.data.body;
-      }
 
-      const refreshData = () => {
-        props.refreshData();
-      }
+  // Update state only when props.data changes
+  useEffect(() => {
+    if (props.data) {
+      console.log("potato Setting table data:", props.data);
+      setHeading(props.data.heading);
+      setBody([...props.data.body]);
+    }
+  }, [props.data]); // Dependency array ensures this runs only when props.data changes
+
+  const refreshData = () => {
+    props.refreshData();
+  };
     
       return (
-          <table style={styles.table}>
-              <thead>
-                  <tr>
-                      {heading.map(head => <th key={head} style={styles.th}>{head}</th>)}
-                  </tr>
-              </thead>
-              <tbody>
-                  {body.map((row, index) => <TableRow key={index} row={row} rowIndex={index} refreshData={refreshData} />)}
-              </tbody>
-          </table>
+        <div className="table-container">
+        <table >
+          <thead>
+            <tr>
+              {heading && heading.map((head) => (
+                <th key={head} >{head}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {body && body.map((row, index) => (
+              <TableRow key={index} row={row} rowIndex={index} refreshData={refreshData} />
+            ))}
+          </tbody>
+        </table>
+      </div>
       );
 }
 
