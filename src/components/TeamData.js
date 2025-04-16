@@ -47,7 +47,6 @@ const TeamData = (props) => {
 
     try {
       const signedUrl = s3.getSignedUrl("getObject", params);
-      console.log("Signed URL:", signedUrl);
       setPdfUrl(signedUrl);
     } catch (error) {
       console.error("Error fetching PDF URL:", error);

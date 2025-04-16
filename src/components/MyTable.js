@@ -24,7 +24,6 @@ const MyTable = (props) =>  {
   // Update state only when props.data changes
   useEffect(() => {
     if (props.data) {
-      console.log("potato Setting table data:", props.data);
       setHeading(props.data.heading);
       setBody([...props.data.body]);
     }

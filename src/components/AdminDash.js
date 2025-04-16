@@ -11,12 +11,10 @@ const AdminDash = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                console.log('potato Fetching table data...');
                 const body = await getTableData();
-                console.log('potato Table data fetched:', { heading: tableHeading, body });
                 setTableData({ heading: tableHeading, body });
             } catch (error) {
-                console.error("potato Error fetching table data:", error);
+                console.error("Error fetching table data:", error);
             }
         };
 

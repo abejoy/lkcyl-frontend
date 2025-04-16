@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Gallery from "./components/Gallery";
 import FootballStats from "./components/FootballStats";
 import MeetTheCommittee from './components/MeetTheCommittee';
-import AdminDash from "./components/AdminDash";
 
 
 
