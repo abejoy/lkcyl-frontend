@@ -178,7 +178,7 @@
           "role": "Treasurer",
           "image": "thomas.jpg",
           "description": "Basildon Unit",
-          "Facebook": ""
+          "instagram": ""
         },
 
         {
@@ -186,7 +186,7 @@
           "role": "Vice President",
           "image": "jimmy.png",
           "description": "Stevenage Unit",
-          "Instagram": "https://www.facebook.com/jimmy.thomas.148116"
+          "instagram": "https://www.facebook.com/jimmy.thomas.148116"
         },
 
         {
@@ -194,7 +194,7 @@
           "role": "Joint Secretary",
           "image": "albin.jpg",
           "description": "Harlow Unit",
-          "Instagram": "https://www.instagram.com/alencherry_albin/"
+          "instagram": "https://www.instagram.com/alencherry_albin/"
         },
 
         {
@@ -202,7 +202,7 @@
           "role": "Joint Treasurer",
           "image": "james.jpg",
           "description": "North West London Unit",
-          "Instagram": " https://www.facebook.com/james.mathew.188/"
+          "instagram": " https://www.facebook.com/james.mathew.188/"
         }
       ]
     }
