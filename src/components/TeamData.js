@@ -48,7 +48,7 @@ const TeamData = (props) => {
     } catch (error) {
       console.error('Error fetching PDF URL:', error);
     }
-  }, [row]);
+  }, [teamName]);
 
   useEffect(() => {
     fetchData();
