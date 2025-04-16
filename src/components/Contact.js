@@ -10,6 +10,9 @@ import MyTable from "./MyTable.js";
 import { Store } from "react-notifications-component";
 import resumeData from "../assets/resumeData.json";
 import BarNav from "./BarNav";
+import logo from "../assets/logo.png";
+import ample from "../assets/sponsers/ample.jpg";
+import cj from "../assets/sponsers/cj.jpg";
 
 const Contact = (props) => {
   const heading = ["Team Name", "Unit", "Colour", "Verified"];
@@ -228,6 +231,18 @@ const Contact = (props) => {
             {errorMessage && <div id="message-warning">{errorMessage}</div>}
             {successMessage && <div id="message-success"><i className="fa fa-check"></i>{successMessage}</div>}
           </div>
+              <h1>Our Sponsors:</h1>
+              <a href="https://www.lkcyl.com/" style={{padding: '1%'}} target="_blank" rel="noopener noreferrer">
+                <img src={logo} alt="LKCYL Logo" style={{width: '20%'}}/>
+              </a>
+
+              <a href="https://amplemortgages.co.uk/" style={{padding: '1%'}} target="_blank" rel="noopener noreferrer">
+              <img src={ample} alt="LKCYL Logo" style={{width: '33%'}}/>
+              </a>
+
+              <a href="https://www.instagram.com/christie_johns_/" style={{padding: '1%'}} target="_blank" rel="noopener noreferrer">
+              <img src={cj} alt="LKCYL Logo"style={{width: '33%'}}/>
+              </a>
         </div>
 
         <Modal isOpen={modalStatus} onRequestClose={closeModal} contentLabel="Admin Modal">
