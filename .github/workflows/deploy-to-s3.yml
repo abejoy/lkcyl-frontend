@@ -48,4 +48,6 @@ jobs:
       # Step 6: Upload emailData folder to S3
       - name: Sync emailData folder to S3
         run: |
-          aws s3 sync ./emailData s3://prodlkcyllkcylstackemailbucket --delete
+          aws s3 sync ./emailData s3://prodlkcyllkcylstackemailbucket \
+          --exclude "verificationPDFs" \
+          --delete
