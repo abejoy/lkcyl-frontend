@@ -24,7 +24,7 @@ const MyTable = (props) => {
   useEffect(() => {
     if (props.data) {
       setHeading(props.data.heading);
-      setBody([...props.data.body]);
+      setBody(props.data.body);
     }
   }, [props.data]); // Dependency array ensures this runs only when props.data changes
 

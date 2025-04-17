@@ -15,9 +15,20 @@ const formattedImages = importedImages.map((src, index) => ({
 const Gallery = (props) => {
   return (
     <>
-      <div style={{ backgroundColor: '#1F1F1F', padding: '3rem 0' }}>
+      <div style={{ backgroundColor: '#1F1F1F', padding: '6rem 1rem' }}>
         <BarNav />
-        <ImageGallery imagesInfoArray={formattedImages} />
+        <ImageGallery
+          lazy={true}
+          imagesInfoArray={formattedImages}
+          lazyFromIndex={0} // Start lazy loading from the first image
+          customStyles={{
+            imageStyle: {
+              borderRadius: '10px', // Add rounded corners to images
+              objectFit: 'cover', // Ensure images fit nicely
+              border: '3px solid #FFA447', // Add a border around images
+            },
+          }}
+        />
       </div>
     </>
   );

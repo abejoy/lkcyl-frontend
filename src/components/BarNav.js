@@ -2,18 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import './BarNav.css';
+import { isAdminPageAvailable } from '../data-service/pi-data-service';
 
-const barNavNames = [
+const initialBarNavNames = [
   { name: 'Home', path: '/' },
   { name: 'Gallery', path: '/gallery' },
   { name: 'Meet the Committee', path: '/committee' },
   { name: 'Football Registration', path: '/football' },
-  // { name: "Admin", path: "/admindash" },
 ];
 
 const BarNav = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showAdminPage, setShowAdminPage] = useState(false);
+  const [barNavNames, setBarNavNames] = useState(initialBarNavNames);
   const menuRef = useRef(null); // Reference to the menu container
 
   const getLinkStyle = (path) => {
@@ -31,13 +33,28 @@ const BarNav = () => {
       }
     };
 
+    const addAdminToNavBar = () => {
+      if (barNavNames.some((item) => item.name === 'Admin')) return;
+      barNavNames.push({ name: 'Admin', path: '/admindash' });
+      setBarNavNames(barNavNames);
+    };
+
+    const checkIFAdminIsAvaiable = async () => {
+      const showAdmin = await isAdminPageAvailable();
+      setShowAdminPage(showAdmin);
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside); // For touch events
+    showAdminPage && checkIFAdminIsAvaiable();
+
+    addAdminToNavBar();
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.addEventListener('touchstart', handleClickOutside); // For touch events
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

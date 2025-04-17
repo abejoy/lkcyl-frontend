@@ -11,6 +11,21 @@ class Footer extends Component {
         </li>
       ));
     }
+    const handleCopyUuid = () => {
+      const uuid = localStorage.getItem('user_uuid'); // Retrieve the UUID from localStorage
+      if (uuid) {
+        navigator.clipboard
+          .writeText(uuid) // Copy the UUID to the clipboard
+          .then(() => {
+            alert('UUID copied to clipboard!'); // Notify the user
+          })
+          .catch((err) => {
+            console.error('Failed to copy UUID:', err);
+          });
+      } else {
+        alert('No UUID found in localStorage.');
+      }
+    };
 
     return (
       <footer
@@ -56,7 +71,9 @@ class Footer extends Component {
             justifyContent: 'center',
           }}
         >
-          <li>&copy; KCYL</li>
+          <li onClick={handleCopyUuid} style={{ cursor: 'pointer' }}>
+            &copy; KCYL
+          </li>
           <li>
             Design by{' '}
             <a

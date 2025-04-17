@@ -11,6 +11,7 @@ const AdminDash = () => {
     const fetchData = async () => {
       try {
         const body = await getTableData();
+        console.log('Table data:', body);
         setTableData({ heading: tableHeading, body });
       } catch (error) {
         console.error('Error fetching table data:', error);
@@ -26,9 +27,11 @@ const AdminDash = () => {
 
   return (
     <>
-      <BarNav />
-      <div style={{ marginBottom: '5rem' }}>Welcome to top secret page, don’t share this with anyone.</div>
-      <MyTable data={tabledata} />
+      <div style={{ backgroundColor: '#000000', padding: '3rem 0' }}>
+        <BarNav />
+        <div style={{ marginBottom: '5rem' }}>Welcome to top secret page, don’t share this with anyone.</div>
+        <MyTable data={tabledata} />
+      </div>
     </>
   );
 };
