@@ -47,7 +47,7 @@ const BarNav = () => {
 
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside); // For touch events
-    showAdminPage && checkIFAdminIsAvaiable();
+    checkIFAdminIsAvaiable();
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
