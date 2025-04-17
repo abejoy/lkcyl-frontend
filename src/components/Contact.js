@@ -60,7 +60,7 @@ const Contact = (props) => {
   };
 
   const handleChange = (e) => {
-    if (e.target.id === 'teamName' && e.target.value === 'admindash') openModal();
+    // if (e.target.id === 'teamName' && e.target.value === 'admindash') openModal();
     formData[e.target.id] = e.target.value;
     setFormData({ ...formData });
   };

@@ -20,6 +20,7 @@ class Footer extends Component {
             alert('UUID copied to clipboard!'); // Notify the user
           })
           .catch((err) => {
+            alert('Failed to copy UUID. Please try again.');
             console.error('Failed to copy UUID:', err);
           });
       } else {

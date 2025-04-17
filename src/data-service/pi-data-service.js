@@ -2,6 +2,8 @@
 import { gql } from '@apollo/client';
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
+export const userCookieIdName = 'user_uuid';
+
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
@@ -266,10 +268,22 @@ export const getAllAvailableColors = async () => {
   return data.getAvailableColors;
 };
 
+const IS_ADMIN_AVAILABLE_QUERY = gql`
+  query IsAdminAvailable($cookieId: String!) {
+    isAdminAvailable(cookieId: $cookieId)
+  }
+`;
+
 export const isAdminPageAvailable = async () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(false); // Resolve the promise with `true` after 3 seconds
-    }, 3000); // 3000 milliseconds = 3 seconds
+  const cookieId = localStorage.getItem(userCookieIdName);
+  const { errors, data } = await client.query({
+    query: IS_ADMIN_AVAILABLE_QUERY,
+    fetchPolicy: 'network-only',
+    variables: { cookieId },
   });
+  if (errors && errors.length > 0) {
+    console.error('GraphQL Errors:', errors);
+    throw new Error('Errors returned from the server.');
+  }
+  return data.isAdminAvailable;
 };

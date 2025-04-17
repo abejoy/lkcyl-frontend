@@ -14,10 +14,8 @@ import FootballStats from './components/FootballStats';
 import MeetTheCommittee from './components/MeetTheCommittee';
 import { v4 as uuidv4 } from 'uuid'; // Import the UUID generator
 import AdminDash from './components/AdminDash';
-import { isAdminPageAvailable } from './data-service/pi-data-service';
+import { isAdminPageAvailable, userCookieIdName } from './data-service/pi-data-service';
 import BarNav from './components/BarNav';
-
-const userCookieId = 'user_uuid';
 
 const App = () => {
   const [showAdminPage, setShowAdminPage] = useState(false);
@@ -25,11 +23,11 @@ const App = () => {
   useEffect(() => {
     const handleLocalStorage = () => {
       // Check if a UUID exists in localStorage
-      const existingUuid = localStorage.getItem(userCookieId);
+      const existingUuid = localStorage.getItem(userCookieIdName);
       if (!existingUuid) {
         // Generate a new UUID and store it in localStorage
         const newUuid = uuidv4();
-        localStorage.setItem(userCookieId, newUuid);
+        localStorage.setItem(userCookieIdName, newUuid);
         return newUuid;
       } else {
         return existingUuid;
