@@ -269,7 +269,7 @@ export const getAllAvailableColors = async () => {
 export const isAdminPageAvailable = async () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(true); // Resolve the promise with `true` after 3 seconds
+      resolve(false); // Resolve the promise with `true` after 3 seconds
     }, 3000); // 3000 milliseconds = 3 seconds
   });
 };
