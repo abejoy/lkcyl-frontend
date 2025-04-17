@@ -14,7 +14,7 @@ const initialBarNavNames = [
 const BarNav = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showAdminPage, setShowAdminPage] = useState(false);
+
   const [barNavNames, setBarNavNames] = useState(initialBarNavNames);
   const menuRef = useRef(null); // Reference to the menu container
 
@@ -41,7 +41,6 @@ const BarNav = () => {
 
     const checkIFAdminIsAvaiable = async () => {
       const showAdmin = await isAdminPageAvailable();
-      setShowAdminPage(showAdmin);
       showAdmin && addAdminToNavBar();
     };
 
