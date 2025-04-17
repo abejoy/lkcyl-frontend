@@ -42,13 +42,12 @@ const BarNav = () => {
     const checkIFAdminIsAvaiable = async () => {
       const showAdmin = await isAdminPageAvailable();
       setShowAdminPage(showAdmin);
+      showAdmin && addAdminToNavBar();
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside); // For touch events
     showAdminPage && checkIFAdminIsAvaiable();
-
-    addAdminToNavBar();
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
