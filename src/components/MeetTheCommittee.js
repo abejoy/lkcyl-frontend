@@ -32,7 +32,7 @@ const MeetTheCommittee = (props) => {
                 const cardContent = (
                   <div className="event-card">
                     <img src={getImage(member.image)} alt={member.name} className="committee-img" />
-                    <h3 className="card-title">{member.name}</h3>
+                    <p className="card-title">{member.name}</p>
                     <p className="event-meta">{member.role}</p>
                     <p className="event-details">{member.description}</p>
                   </div>
